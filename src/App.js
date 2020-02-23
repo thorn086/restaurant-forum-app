@@ -43,7 +43,7 @@ class App extends React.Component {
 
       <RestForumContext.Provider value={restForumContext}>
         <Switch>
-          <Route exact path='/'><Home /></Route>
+          <Route exact path='/' component={Home}></Route>
           <Route exact path='/state' component={State}></Route>
           <Route exact path='/state/:id' ><City /></Route>
           <Route exact path='/city/:id' ><Restpage /></Route>

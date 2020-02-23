@@ -30,7 +30,7 @@
     }
     
     .nav-btn{
-        margin: 1rem;
+       margin: 3rem;
         text-transform: uppercase;    
     }
     
@@ -66,6 +66,7 @@
         text-align: center;
         color: #4c4cf2;
         width: 100%;
+        height: auto;
     }
     .navigation__icon{
         position: relative;

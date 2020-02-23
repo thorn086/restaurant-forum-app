@@ -13,9 +13,9 @@ class Title extends React.Component {
     }*/
     renderLogin=()=>{
     return(
-        <button className='wine-btn btn-white btn-animated'>
+        <div>
         <NavLink to='/state' className='link-btn'>States</NavLink>
-    </button>
+    </div>
     )
     }
     render() {

@@ -5,7 +5,7 @@ background-color: rgb(70, 70, 193);
 margin:1rem;
 border-radius: 5%;
 box-shadow: 6px 6px rgb(61, 61, 95);
-padding: 1rem 1rem 1.5rem 1rem;
+padding: 1rem;
 text-align: center;
 height: auto;
 letter-spacing: 2px;
@@ -13,4 +13,8 @@ color: white;
 font-size: 16px;
 font-weight: 600;
 line-height: 2;
+}
+#username-login, #password-login{
+  width: 15rem;
+  height: 2rem;
 }

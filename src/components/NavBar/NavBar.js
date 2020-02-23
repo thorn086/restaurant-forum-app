@@ -13,14 +13,14 @@ class NavBar extends React.Component {
         return (
             <div className='navigation__item'>
                 <li className='navigation__item' onClick={this.handleLogoutClick}>
-                    <button className='nav-btn'>
+                    <div className='nav-btn'>
                         <NavLink to='/' className='link-btn'> Logout</NavLink>
-                    </button>
+                    </div>
                 </li>
                 <li className='navigation__item'>
-                    <button className='nav-btn'>
+                    <div className='nav-btn'>
                         <NavLink to='/' className='link-btn'>Home</NavLink>
-                    </button>
+                    </div>
                 </li>
             </div>
         )
@@ -29,24 +29,24 @@ class NavBar extends React.Component {
         return (
             <div className='navigation__item'>
                 <li className='navigation__item'>
-                    <button className='nav-btn'>
+                    <div className='nav-btn'>
                         <NavLink to='/login' className='link-btn'>Login</NavLink>
-                    </button>
+                    </div>
                 </li>
                 <li className='navigation__item'>
-                    <button className='nav-btn'>
+                    <div className='nav-btn'>
                         <NavLink to='/signup' className='link-btn'>Sign Up</NavLink>
-                    </button>
+                    </div>
                 </li>
                 <li className='navigation__item'>
-                    <button className='nav-btn'>
+                    <div className='nav-btn'>
                         <NavLink to='/' className='link-btn'>Home</NavLink>
-                    </button>
+                    </div>
                 </li>
                 <li className='navigation__item'>
-                    <button className='nav-btn'>
+                    <div className='nav-btn'>
                         <NavLink to='/state' className='link-btn'>State</NavLink>
-                    </button>
+                    </div>
                 </li>
             </div>
         )
