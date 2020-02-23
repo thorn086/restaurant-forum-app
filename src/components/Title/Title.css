@@ -1,0 +1,123 @@
+.heading-primary {
+    color:#fff;
+    text-shadow: 1px 1px black;
+    text-transform: uppercase;
+    backface-visibility: hidden;
+    font-family: 'Sriracha', cursive;
+}
+.text-box{
+    position: absolute; 
+    top: 50%;
+    left:50%;
+    width: 90%;
+    background-color: rgb(143, 143, 211);
+    box-shadow: 6px 6px rgb(61, 61, 95);
+    padding: 1rem;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    font-family: 'Fjalla One', sans-serif;
+    
+}
+.link-btn{
+    text-decoration: none;
+    border: 1px solid black;
+    background-color: rgb(70, 70, 193);
+    padding: 1rem 3rem;
+    border-radius: 8%;
+    box-shadow: 6px 6px rgb(61, 61, 95);
+    text-align: center;
+    height: 3rem;
+    letter-spacing: 2px;
+    border-radius: 6%;
+    color: white;
+    font-size: 20px;
+    font-family: 'Fjalla One', sans-serif;
+    font-weight: 500;
+}
+
+.heading-main{
+display:block;
+font-size: 25px;
+font-weight: 400;
+letter-spacing: 3px;
+animation-name: moveInLeft;
+animation-duration: 3s;
+animation-timing-function: ease-out;
+animation-fill-mode: both;
+margin: 2rem 0;
+}
+
+.site-description{
+    margin: 3rem 0;
+    border: 2px solid black;
+    font-size: .84rem;
+    border-radius: 5%;
+    color: white;
+    background-color: rgb(70, 70, 193);
+    opacity: 85%;
+    text-transform: uppercase;
+    padding: .5rem;
+    
+}
+
+@keyframes moveInLeft{
+    0%{
+        opacity: 0;
+        transform: translateX(-100px);
+    }
+    80%{
+        transform: translateX(10px);
+    }
+    100%{
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+@keyframes moveInRight{
+    0%{
+        opacity: 0;
+        transform: translateX(100px);
+    }
+    80%{
+        transform: translateX(-10px);
+    }
+    100%{
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@media (min-width:760px){
+   
+   
+    .letter{
+        font-size: 75px;
+        
+    }
+    .heading-main{
+    
+    font-size: 35px;
+    margin-top: 20rem;
+  
+    }
+    .word-sub{
+       
+        font-size: 35px;
+        
+        
+    }
+    .heading-sub{
+  
+    font-size: 25px;
+ 
+    }
+    .text-box{
+        margin-bottom: 20rem;
+    }
+    .site-description{
+        font-size: 1rem;
+        
+        
+        
+    }
+}

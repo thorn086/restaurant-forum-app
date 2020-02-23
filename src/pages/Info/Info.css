@@ -1,0 +1,36 @@
+.rest-info{
+    border: 2px solid black;
+    width: 95%;
+    margin: .5rem .3rem;
+    height: 100rem;
+    background-color:rgb(143, 143, 211);
+}
+.rest-info-title{
+ 
+    color: white;
+}
+.info-box{
+    margin-top: 5rem;
+}
+.info-label{
+    color: rgb(204, 204, 228);
+    text-shadow:1px 1px black;
+    text-align: left;
+}
+
+.rest-info-loc {
+border: 1px solid black;
+width: 90%;   
+background-color: rgb(70, 70, 193);
+margin:1rem;
+border-radius: 5%;
+box-shadow: 6px 6px rgb(61, 61, 95);
+padding: 1rem 1rem 1.5rem 1rem;
+text-align: center;
+height: auto;
+letter-spacing: 2px;
+color: white;
+font-size: 16px;
+font-weight: 600;
+line-height: 2;
+}
