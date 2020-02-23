@@ -1,6 +1,6 @@
 import React from 'react';
 import RestForumContext from './context'
-import {Switch, Route} from 'react-router-dom'
+import { Switch, Route } from 'react-router-dom'
 import Home from './pages/Home/home'
 import STORE from './dummy-store'
 import State from './pages/State/State'
@@ -19,7 +19,7 @@ class App extends React.Component {
       restaurants: []
     }
   }
-  
+
 
   componentDidMount() {
     this.setState({
@@ -32,7 +32,7 @@ class App extends React.Component {
       ...this.state.city, city
     })
   }
- 
+
   render() {
     const restForumContext = {
       states: STORE.states,
@@ -40,18 +40,18 @@ class App extends React.Component {
       restaurants: STORE.restaurants
     }
     return (
-      
+
       <RestForumContext.Provider value={restForumContext}>
-       <Switch>
-       <Route exact path='/'><Home /></Route>
-       <Route  path='/state' component={State}></Route>
-       <Route exact path='/state/:id' ><City /></Route>
-       <Route exact path='/city/:id' ><Restpage /></Route>
-       <Route exact path='/restaurant/:id' ><Info /></Route>
-       <Route path='/signup' component={SignUp}></Route>
-       <Route path='/login' component={Login}></Route>
-       </Switch>
-       
+        <Switch>
+          <Route exact path='/'><Home /></Route>
+          <Route exact path='/state' component={State}></Route>
+          <Route exact path='/state/:id' ><City /></Route>
+          <Route exact path='/city/:id' ><Restpage /></Route>
+          <Route exact path='/restaurant/:id' ><Info /></Route>
+          <Route path='/signup' component={SignUp}></Route>
+          <Route path='/login' component={Login}></Route>
+        </Switch>
+
       </RestForumContext.Provider>
 
     )
