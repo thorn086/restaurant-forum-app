@@ -1,7 +1,7 @@
 import React from 'react'
 
 const RestForumContext = React.createContext({
-    state:[],
+    states:[],
     city:[],
     restaurants:[]
 })

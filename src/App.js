@@ -14,7 +14,7 @@ class App extends React.Component {
   constructor(props) {
     super(props)
     this.state = {
-      state: [],
+      states: [],
       city: [],
       restaurants: []
     }
@@ -35,7 +35,7 @@ class App extends React.Component {
  
   render() {
     const restForumContext = {
-      state: STORE.state,
+      states: STORE.states,
       city: STORE.city,
       restaurants: STORE.restaurants
     }
@@ -44,7 +44,7 @@ class App extends React.Component {
       <RestForumContext.Provider value={restForumContext}>
        <Switch>
        <Route exact path='/'><Home /></Route>
-       <Route exact path='/state'  component={State}></Route>
+       <Route  path='/state' component={State}></Route>
        <Route exact path='/state/:id' ><City /></Route>
        <Route exact path='/city/:id' ><Restpage /></Route>
        <Route exact path='/restaurant/:id' ><Info /></Route>

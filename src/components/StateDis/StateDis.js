@@ -7,7 +7,7 @@ class StateDis extends React.Component {
     static contextType = RestForumContext
     render() {
         const { states } = this.context
-
+console.log(states)
         return (
             <div>
                 <div className='state_list'>
