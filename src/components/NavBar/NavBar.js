@@ -45,7 +45,7 @@ class NavBar extends React.Component {
                 </li>
                 <li className='navigation__item'>
                     <div className='nav-btn'>
-                        <NavLink to='/state' className='link-btn'>State</NavLink>
+                        <NavLink to='/states' className='link-btn'>States</NavLink>
                     </div>
                 </li>
             </div>

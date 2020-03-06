@@ -1,41 +1,105 @@
 import React from 'react'
 import { withRouter, NavLink } from 'react-router-dom'
-import RestForumContext from '../../context'
+import AddCity from '../../components/AddCity/AddCity'
+import restForumContext from '../../context'
+import config from '../../config'
+import TokenService from '../../services/token-services'
 import './CityDis.css'
-import {getCitiesByState} from '../../states-helpers'
+
 
 class CityDis extends React.Component {
-    static defaultProps = {
-        match: {
-          params: {}
-        }
-      }
-    static contextType = RestForumContext
- 
-    render() {
+    static contextType = restForumContext
+    state={
+        show:false
+    }
+
+    handleDeleteCity=event=>{
+        console.log(event.target)
+        event.preventDefault()
         const {id} = this.props.match.params
-        const { city } = this.context
-       const currentCity = getCitiesByState(city, parseInt(id))
-      
-       
-        
- return (
-            <div className='state_list'>
-                <ul className='state-list-items'>
-                    {currentCity.map(newCity =>
-                        <li key={newCity.id} className='state-items'>
+        fetch(`${config.API_ENDPOINT}/states/${id}`,{
+            method:'DELETE',
+            headers:{
+            'content-type':'application/json',
+            'authorization':`bearer ${TokenService.getAuthToken()}`
+        },
+    })
+        .then(result => {
+            if (!result.ok)
+                return result.json().then(event => Promise.reject(event))
+        })
+        .then(() => {
+            this.props.history.push(`/states/${id}`)
+            this.context.deleteCity(parseInt(id, 10))
+            
+        })
+        .catch(error => {
+            console.log({ error })
+        })
+    }
+
+    hasError() {
+        const { error } = this.props
+        return (
+            <ul className='state-list-items'>
+                <li key={error} className='state-items'>
+                    <h3 className='state-name'>{error}</h3>
+                </li>
+            </ul>
+        )
+    }
+
+   
+    hasNoError() {
+        const { cities } = this.context
+        console.log(cities)
+        return (
+            <ul className='state-list-items'>
+                {cities.map((newCity, i) =>{
+                    return (
+                        <li key={i} className='state-items'>
                             <NavLink className='state-list-link'
                                 to={`/city/${newCity.id}`}>
                                 <h3 className='state-name'>
                                     {newCity.name}
                                 </h3>
-                            </NavLink>
-                        </li>
-                    )}
-                </ul>
-                <button className=' back-btn' tag='button' onClick={() => this.props.history.goBack()}>Back</button>
-                <button className=' back-btn' tag='button'>Add City</button>
+                            </NavLink> 
+                            <button className='delete-btn' type='button' onClick={this.handleDeleteCity}>Delete</button>
+                        </li>)
+                })}
+            </ul>
+        )
+    }
+    showCityAdd(){
+        this.setState({
+            show:!this.state.show
+        })
+    }
 
+
+    handleCityTitle() {
+        const {show} =this.state
+        if(show === false){
+            return (
+                'Add City'
+            )
+        }else{
+            return(
+                'Cancel'
+            )
+        }
+
+    }
+    render() {
+        const { error } = this.props
+       
+        return (
+            <div className='state_list'>
+                {(error === null) ? this.hasNoError() : this.hasError()}
+                {this.state.show ? <AddCity /> :null}
+                <button className=' back-btn' tag='button' onClick={()=> this.props.history.goBack()}>Back</button>
+                <button className=' back-btn' tag='button' onClick={()=> this.showCityAdd()}>{this.handleCityTitle()}</button>
+                
             </div>
         )
     }

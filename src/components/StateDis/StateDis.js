@@ -14,7 +14,7 @@ class StateDis extends React.Component {
                         {states.map(newState =>
                             <li key={newState.id} className='state-items'>
                                 <NavLink className='state-list-link'
-                                    to={`/state/${newState.id}`}>
+                                    to={`/states/${newState.id}`}>
                                     <h3 className='state-name'>
                                         {newState.name}
                                     </h3>

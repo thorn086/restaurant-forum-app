@@ -14,7 +14,7 @@ class Title extends React.Component {
     renderLogin=()=>{
     return(
         <div>
-        <NavLink to='/state' className='link-btn'>States</NavLink>
+        <NavLink to='/states' className='link-btn'>States</NavLink>
     </div>
     )
     }

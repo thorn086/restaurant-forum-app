@@ -1,0 +1,11 @@
+.delete-btn{
+    margin: 1rem;
+    background-color: rgb(98, 98, 250);
+    width: 7rem;
+    height: 2rem;
+    border-radius: 10%;
+    color: white;
+    font-size: 12px;
+    font-family: 'Fjalla One', sans-serif;
+    letter-spacing: 1px;
+}
