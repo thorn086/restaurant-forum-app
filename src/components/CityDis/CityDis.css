@@ -9,3 +9,12 @@
     font-family: 'Fjalla One', sans-serif;
     letter-spacing: 1px;
 }
+.state-name{
+    margin: 1rem 0;
+    color: white;
+    text-transform: uppercase;
+}
+.error-name{
+    color: white;
+    text-transform: uppercase;
+}

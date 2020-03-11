@@ -14,10 +14,10 @@ class CityDis extends React.Component {
     }
 
     handleDeleteCity=event=>{
-        console.log(event.target)
         event.preventDefault()
-        const {id} = this.props.match.params
-        fetch(`${config.API_ENDPOINT}/states/${id}`,{
+        const citySelected = event.target.value
+        
+        fetch(`${config.API_ENDPOINT}/states/${citySelected}`,{
             method:'DELETE',
             headers:{
             'content-type':'application/json',
@@ -28,9 +28,8 @@ class CityDis extends React.Component {
             if (!result.ok)
                 return result.json().then(event => Promise.reject(event))
         })
-        .then(() => {
-            this.props.history.push(`/states/${id}`)
-            this.context.deleteCity(parseInt(id, 10))
+        .then(()=> {
+           this.context.deleteCity(citySelected)
             
         })
         .catch(error => {
@@ -43,7 +42,7 @@ class CityDis extends React.Component {
         return (
             <ul className='state-list-items'>
                 <li key={error} className='state-items'>
-                    <h3 className='state-name'>{error}</h3>
+                    <h3 className='error-name'>{error}</h3>
                 </li>
             </ul>
         )
@@ -64,7 +63,8 @@ class CityDis extends React.Component {
                                     {newCity.name}
                                 </h3>
                             </NavLink> 
-                            <button className='delete-btn' type='button' onClick={this.handleDeleteCity}>Delete</button>
+                            <button value={newCity.id} className='delete-btn' type='button' onClick={this.handleDeleteCity}>Delete</button>
+
                         </li>)
                 })}
             </ul>

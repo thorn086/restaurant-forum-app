@@ -39,8 +39,6 @@ return results.json()
 })
 .then(city=>{
     this.context.addCity(city)
-  
-    //window.location.reload()
 })
 .catch(error => {
     console.error({ error })
@@ -49,12 +47,13 @@ return results.json()
 
 
     render(){
-        return (
+         return (
             <form className="city-form" onSubmit={this.handleSubmit}>
                 <div className='city_field'>
                     <label htmlFor='city_name'>City Name</label>
                     <input type='text' id='name' name='city-input'></input>
                 </div>
+                
                 <button type='submit' className='back-btn form'>Add</button>
             </form>
         )

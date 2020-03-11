@@ -6,6 +6,7 @@ import State from './pages/State/State'
 import City from './pages/City/City_page'
 import config from './config'
 import Restpage from './pages/Rest-Page/Rest-page'
+import EditRestaurant from './components/updateRestInfo/updateRestInfo'
 import './App.css'
 import Info from './pages/Info/Info'
 import SignUp from './pages/SignUp/SignUp'
@@ -17,25 +18,25 @@ class App extends React.Component {
       states: [],
       cities: [],
       restaurants: [],
-      error:null
+      error: null
     }
   }
 
 
   componentDidMount() {
-     fetch(`${config.API_ENDPOINT}/states`)
-   .then(stateResult=>{
-     if (!stateResult.ok)
-    throw new Error(stateResult.statusText)
-   
-   return stateResult.json()
-   })
+    fetch(`${config.API_ENDPOINT}/states`)
+      .then(stateResult => {
+        if (!stateResult.ok)
+          throw new Error(stateResult.statusText)
 
-   .then(state => this.setState({states:state}))
-   .catch(error =>{
-     console.log(error)
-   })
-   
+        return stateResult.json()
+      })
+
+      .then(state => this.setState({ states: state }))
+      .catch(error => {
+        console.log(error)
+      })
+
   }
 
   handleAddCity = city => {
@@ -43,17 +44,42 @@ class App extends React.Component {
     this.setState({
       cities: [...this.state.cities, city]
     })
-    setTimeout(()=>console.log(this.state), 2000)
+    setTimeout(() => console.log(this.state), 2000)
   }
-  addCities=cities=>{
+
+  handleAddRestaurants = restAdd => {
     this.setState({
-  cities:cities
-})
+      restaurants: [...this.state.restaurants, restAdd]
+    })
+
   }
-  handleDeleteCity = cities =>{
-    const deleteCity=this.state.cities.filter(city=>city.id !== cities)
+
+  addCities = cities => {
     this.setState({
-      cities:deleteCity
+      cities: cities
+    })
+  }
+  addStates = states => {
+    this.setState({
+      states: states
+    })
+  }
+
+  addRestaurants = restaurants => {
+    this.setState({
+      restaurants: restaurants
+    })
+  }
+  handleDeleteCity = cityId => {
+    const deletedCity = this.state.cities.filter(city => city.id !== parseInt(cityId))
+    this.setState({
+      cities: deletedCity
+    })
+  }
+  handleDeleteRestaurant = restaurantId => {
+    const deletedRestaurant = this.state.restaurants.filter(restaurant => restaurant.id !== parseInt(restaurantId))
+    this.setState({
+      restaurants: deletedRestaurant
     })
   }
 
@@ -63,10 +89,15 @@ class App extends React.Component {
       cities: this.state.cities,
       restaurants: this.state.restaurants,
       addCity: this.handleAddCity,
-      deleteCity:this.handleDeleteCity,
-      addCities:this.addCities,
-      error: this.state.error
+      deleteCity: this.handleDeleteCity,
+      deletedRestaurant: this.handleDeleteRestaurant,
+      addCities: this.addCities,
+      addRestaurants: this.addRestaurants,
+      addStates: this.addStates,
+      error: this.state.error,
+      addRestaurant: this.handleAddRestaurants
     }
+
     return (
 
       <RestForumContext.Provider value={restForumContext}>
@@ -75,9 +106,10 @@ class App extends React.Component {
           <Route exact path='/states' component={State}></Route>
           <Route exact path='/states/:id' ><City /></Route>
           <Route exact path='/city/:id' ><Restpage /></Route>
-          <Route exact path='/restaurant/:id' ><Info /></Route>
+          <Route exact path='/restaurant/:id' component={Info}></Route>
           <Route path='/signup' component={SignUp}></Route>
           <Route path='/login' component={Login}></Route>
+          <Route exact path='/editrestaurant/:id'><EditRestaurant /></Route>
         </Switch>
 
       </RestForumContext.Provider>

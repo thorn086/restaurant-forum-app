@@ -34,7 +34,7 @@ state={
     render() {
       
         const {error} = this.state
-       
+    
         return (
             <div className="state_page">
                 <h2 className="state_title">Choose your City</h2>
