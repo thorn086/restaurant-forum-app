@@ -4,5 +4,5 @@ export default{
     USER_ID: 'drose@gmail.com',
     API_KEY: process.env.REACT_APP_API_KEY,
     USER_INFO: process.env.USER_INFO,
-    API_ENDPOINT: process.env.REACT_APP_API_ENDPOINT 
+    API_ENDPOINT: process.env.REACT_APP_ENDPOINT 
 }
