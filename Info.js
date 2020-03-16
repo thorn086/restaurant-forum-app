@@ -68,7 +68,7 @@ class Info extends React.Component {
             return (
                 <div className='rest-info'>
                     <NavBar />
-                    <div className='state-items info'>
+                    <div className='state-items'>
                         <h2 className='rest-info-title'>
                             OOPS......
                             </h2>
@@ -77,43 +77,46 @@ class Info extends React.Component {
                         Your Restaurant no Longer exists, Please Start Over or Go Back.
                     </p>
 
-                    <button className=' back-btn info' tag='button' onClick={() => this.props.history.goBack()}>Back</button>
-                    <div className='back-btn info'>
-                        <NavLink to='/' className='home-btn'>Home</NavLink>
+                    <button className=' back-btn' tag='button' onClick={() => this.props.history.goBack()}>Back</button>
+                    <div className='back-btn'>
+                        <NavLink to='/'className='home-btn'>Home</NavLink>
                     </div>
                 </div>
             )
         } else {
+
+            console.log('this is in state', restaurants, states)
+
+
             const { state_id } = myRest
             const [newState] = findState(states, state_id)
+            console.log('this is newState', newState)
             return (
                 <div className='rest-info'>
                     <NavBar />
+                    <div className='info-box'>
+                        <div className='state-items'>
+                            <h2 className='rest-info-title'>
+                                {myRest.name}
+                            </h2>
+                        </div>
+                        <div className='rest-info-loc'>
+                            <p className='info-label'>Address:</p>
+                            <p> {myRest.address}</p>
+                            <p className='info-label'>State:</p>
+                            <p>{newState.name}</p>
+                            <p className='info-label'>Phone:</p>
+                            <p>{myRest.phone}</p>
+                            <p className='info-label'>Comments:</p>
+                            <p>{myRest.comments}</p>
 
-                    <div className='rest-info-main'>
-                        <h2 className='rest-info-title'>
-                            {myRest.name}
-                        </h2>
+                        </div>
                     </div>
-                    <div className='rest-info-loc'>
-                        <p className='info-label'>Address:</p>
-                        <p> {myRest.address}</p>
-                        <p className='info-label'>State:</p>
-                        <p>{newState.name}</p>
-                        <p className='info-label'>Phone:</p>
-                        <p>{myRest.phone}</p>
-                        <p className='info-label'>Comments:</p>
-                        <p>{myRest.comments}</p>
-                        <p className='info-label'>Edited by User:</p>
-                        <p>{myRest.author}</p>
-
-                    </div>
-
-                    <NavLink to={'/states'}><button className=' back-btn info' tag='button'>States</button></NavLink>
+                    <button className=' back-btn' tag='button' onClick={() => this.props.history.goBack()}>Back</button>
                     <NavLink to={`/editrestaurant/${this.props.match.params.id}`}>
-                        <button className=' back-btn info' tag='button' >Update</button>
+                        <button className=' back-btn' tag='button' >Update</button>
                     </NavLink>
-                    <button className='back-btn info' type='button' onClick={this.handleDeleteRestaurant}>Delete</button>
+                    <button className='back-btn' type='button' onClick={this.handleDeleteRestaurant}>Delete</button>
 
                 </div>
             )

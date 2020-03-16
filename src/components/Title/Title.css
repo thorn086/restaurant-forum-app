@@ -52,7 +52,7 @@ margin: 2rem 0;
     margin: 3rem 0;
     border: 2px solid black;
     font-size: .84rem;
-    border-radius: 5%;
+    border-radius: 2rem;
     color: white;
     background-color: rgb(70, 70, 193);
     text-transform: uppercase;
@@ -90,14 +90,11 @@ margin: 2rem 0;
 @media (min-width:760px){
    
    
-    .letter{
-        font-size: 75px;
-        
-    }
+  
     .heading-main{
     
-    font-size: 35px;
-    margin-top: 20rem;
+    font-size: 45px;
+    margin-top: 8rem;
   
     }
     .word-sub{
@@ -116,6 +113,68 @@ margin: 2rem 0;
     }
     .site-description{
         font-size: 1rem;
+        
+        
+        
+    }
+}
+@media (min-width:1440px){
+   
+   
+  
+    .heading-main{
+    
+    font-size: 45px;
+    margin-top: 8rem;
+  
+    }
+    .word-sub{
+       
+        font-size: 35px;
+        
+        
+    }
+    .heading-sub{
+  
+    font-size: 25px;
+ 
+    }
+    .text-box{
+       width: 70%;
+    }
+    .site-description{
+        font-size: 18px;
+        
+        
+        
+    }
+}
+@media (min-width:2560px){
+   
+   
+  
+    .heading-main{
+    
+    font-size: 45px;
+    margin-top: 8rem;
+  
+    }
+    .word-sub{
+       
+        font-size: 35px;
+        
+        
+    }
+    .heading-sub{
+  
+    font-size: 25px;
+ 
+    }
+    .text-box{
+       width: 50%;
+    }
+    .site-description{
+        font-size: 18px;
         
         
         

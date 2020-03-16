@@ -1,5 +1,44 @@
-.add{height: auto;}
+.add{
+width: auto;}
 
 .none{
     color: white;
+    text-decoration: uppercase;
+}
+@media (min-width: 760px){
+    .back-btn.rest,.back-btn.add{
+        margin:2rem 0 2rem 6.3rem
+    }
+}
+@media (min-width: 1020px){
+    .state_list.rest{
+        width: 80%;
+    }
+    .back-btn.rest,.back-btn.add{
+        margin:4rem 0 4rem 7rem
+    }
+}
+@media (min-width: 1020px){
+    .state_list.rest{
+        width: 70%;
+    }
+    .back-btn.rest,.back-btn.add{
+        margin:4rem 0 4rem 11rem
+    }
+}
+@media (min-width: 1950px){
+    .state_list.rest{
+        width: 60%;
+    }
+    .back-btn.rest,.back-btn.add{
+        margin:4rem 0 4rem 15rem
+    }
+}
+@media (min-width: 1950px){
+    .state_list.rest{
+        width: 40%;
+    }
+    .back-btn.rest,.back-btn.add{
+        margin:4rem 0 4rem 12.5rem
+    }
 }

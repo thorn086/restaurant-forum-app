@@ -40,7 +40,22 @@ getRestaurantById(id){
          ? res.json().then(e => Promise.reject(e))
          : res.json()
      )
-}
+},
+updateRestaurant(id, updatedRestaurant) {
+    return fetch(`${config.API_ENDPOINT}/editrestaurant/${id}`, {
+      method: 'PATCH',
+      headers: {
+        'content-type': 'application/json',
+        'Authorization': `bearer ${TokenService.getAuthToken()}`
+      },
+      body: JSON.stringify(updatedRestaurant)
+    })
+      .then(res =>
+        (!res.ok)
+          ? res.json().then(e => Promise.reject(e))
+          : res
+    )
+  }
 }
 
 export default MiscApiServices

@@ -1,5 +1,6 @@
 import React from 'react'
 import './Login.css'
+import restForumContext from '../../context'
 import NavBar from '../../components/NavBar/NavBar'
 import TokenService from '../../services/token-services'
 import ApiAuthService from '../../services/api-auth-service'
@@ -11,11 +12,14 @@ class Login extends React.Component {
     }
   }
   state = { error: null }
+  static contextType = restForumContext
 
-  handleLoginSuccess = () => {
+  handleLoginSuccess = (email, userId) => {
     const { location, history } = this.props
     const destination = (location.state || {}).from || '/states'
     history.push(destination)
+    this.context.userInfo({ email, userId })
+
   };
 
   handleSubmitWithAuth = e => {
@@ -27,18 +31,33 @@ class Login extends React.Component {
       password: password.value
     })
       .then(res => {
-        email.value = ''
-        password.value = ''
         TokenService.saveAuthToken(res.authToken)
         TokenService.saveUserId(res.userId)
-        this.handleLoginSuccess(true)
+        this.handleLoginSuccess(email.value, res.userId)
+        email.value = ''
+        password.value = ''
       })
       .catch(res => {
         this.setState({ error: res.error })
       })
   };
-
+handleInccorectLogin(){
+  if(this.state.error ===null){
+    return(
+      <div></div>
+    )
+  }else{
+return (
+  <div className='error-message'>
+  <strong>
+    {this.state.error}
+  </strong>
+</div>
+)
+  }
+}
   render() {
+
     return (
       <div className='login-form'>
         <h2 className='state_title'>Login Form</h2>
@@ -64,20 +83,19 @@ class Login extends React.Component {
               </div>
               <div>
               </div>
+             {this.handleInccorectLogin()}
             </div>
             <button className='back-btn' type='submit' value='LogIn'>
               Log In
                 </button>
             <button className='back-btn' tag='button' onClick={() => this.props.history.goBack()}>Back</button>
 
+
+
           </form>
         </div>
-
-        <div className='error-message'>
-          <strong>
-            {this.state.error}</strong>
-        </div>
       </div>
+
     )
   };
 

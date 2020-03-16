@@ -1,9 +1,23 @@
 .rest-info{
     border: 2px solid black;
     width: 95%;
-    margin: 5rem .3rem;
+    margin-top: 3rem;
+    margin:auto;
     height: auto;
     background-color:rgb(143, 143, 211);
+}
+.rest-info-main{
+    border: 1px solid black;  
+    width: 75%; 
+background-color: rgb(70, 70, 193);
+margin:5rem 2.3rem;
+border-radius: 5%;
+box-shadow: 6px 6px rgb(61, 61, 95);
+padding: 1rem 1rem 1.5rem 1rem;
+text-align: center;
+height: auto;
+letter-spacing: 2px;
+
 }
 .rest-info-title{
  
@@ -41,4 +55,54 @@ line-height: 2;
     text-decoration: none;
     color: white;
     text-transform: uppercase;
+}
+@media (min-width: 768px){
+    .rest-info{
+        width:95%;
+        margin: auto;
+    }
+    .state-items.info,.rest-info-loc{
+        margin: 2rem 2.4rem;
+    } 
+    .rest-info-main{
+        margin: 2rem 6rem;
+    }
+}
+@media (min-width: 1094px){
+    .rest-info{
+        width:85%;
+        margin: auto;
+    }
+    .state-items.info,.rest-info-loc{
+        margin: 2rem 2.4rem;
+    } 
+    .back-btn.info{
+        margin-left: 4.5rem;
+    }
+}
+@media (min-width: 1440px){
+    .rest-info{
+        width:65%;
+        margin: auto;
+    }
+    .state-items.info,.rest-info-loc{
+        margin: 2rem 2.4rem;
+        font-size: 18px;
+    } 
+    .back-btn.info{
+        margin-left: 8rem;
+    }
+}
+@media (min-width: 2440px){
+    .rest-info{
+        width:45%;
+        margin: auto;
+    }
+    .state-items.info,.rest-info-loc{
+        margin: 2rem 2.4rem;
+        font-size: 18px;
+    } 
+    .back-btn.info{
+        margin-left: 10rem;
+    }
 }

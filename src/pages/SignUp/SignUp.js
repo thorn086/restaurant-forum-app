@@ -47,7 +47,7 @@ class SignUp extends React.Component {
                 <NavBar />
                 
                 <form className='signup-form-box' onSubmit={this.handleSubmit}>
-           <div className='rest-info-loc'>    
+            
             <div className='signup-password-req'>
                         <strong>
                             Important Password requirements:<br />
@@ -115,13 +115,14 @@ class SignUp extends React.Component {
                     </div>
                   
                    
-               </div> 
+               
+               </form>
+               <div className='button-box'>
                <button className='back-btn submit' type='submit' value='SignUp'>
                         Sign Up
               </button>
               <button className=' back-btn' tag='button' onClick={() => this.props.history.goBack()}>Back</button>
-               </form>
-                
+              </div>
                 <div className='error-message'>
                     <strong>
                         

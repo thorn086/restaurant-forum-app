@@ -59,19 +59,19 @@ class AddRestaurant extends React.Component {
             <form className="restaurant-form" onSubmit={this.handleSubmit}>
                 <div className='restaurant_field'>
                     <label htmlFor='restaurant_name'>Restaurant Name</label>
-                    <input type='text' id='resName' name='restaurant-input'></input>
+                    <input type='text' id='resName' name='restaurant-input' required></input>
                 </div>
                 <div className='restaurant_field'>
                     <label htmlFor='restaurant_name'>Restaurant Address</label>
-                    <input type='text' id='address' name='restaurant-address'></input>
+                    <input type='text' id='address' name='restaurant-address' required></input>
                 </div>
                 <div className='restaurant_field'>
                     <label htmlFor='restaurant_name'>Restaurant Phone</label>
-                    <input type='text' id='phone' name='restaurant-phone'></input>
+                    <input type='text' id='phone' name='restaurant-phone' required></input>
                 </div>
                 <div className='restaurant_field'>
                     <label htmlFor='restaurant_name'>Restaurant State</label>
-                    <select type='text' id='state' name='restaurant-state'>
+                    <select type='text' id='state' name='restaurant-state' required>
                         <option>1 Alabama</option>
                         <option>2 Alaska</option>
                         <option>3 Arizona</option>

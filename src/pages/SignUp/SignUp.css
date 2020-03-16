@@ -1,0 +1,60 @@
+.signup-form{
+    border: 2px solid black;
+    width: 100%;
+    margin: 5rem 0;
+    height: auto;
+    background-color: rgb(143, 143, 211);
+    box-shadow: -2px -2px rgb(61, 61, 95);
+    
+    padding: 1rem 1rem 1.5rem 1rem;
+    text-align: center;
+    height: auto;
+    letter-spacing: 2px;
+   padding: 1rem;
+   
+    font-weight: 600;
+    line-height: 2;
+}
+h2{
+    text-shadow:white 1px 1px;
+    font-size: 36px;
+    color: black;
+}
+.signup-form-box{
+    border: 1px solid black;
+width: 100%;   
+background-color: rgb(70, 70, 193);
+
+border-radius: 5%;
+box-shadow: 6px 6px rgb(61, 61, 95);
+padding: 1rem;
+text-align: center;
+height: auto;
+letter-spacing: 2px;
+color: white;
+font-size: 16px;
+font-weight: 600;
+line-height: 2;
+}
+.button-box{
+    margin-top: 1rem;
+}
+#password{
+    margin-bottom: 2rem;
+}
+.signup-field{
+    margin: 1.5rem .5rem;
+}
+.signup_label{
+    margin: 1rem;
+    font-size: 20px;
+    text-shadow: black 1px 1px;
+}
+.signup-password-req{
+    text-transform: uppercase;
+    text-shadow: black 1px 1px;
+}
+.signup_input{
+    width:15rem;
+    height: 2rem;
+}

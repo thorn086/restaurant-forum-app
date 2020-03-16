@@ -55,7 +55,6 @@ class RestDis extends React.Component {
 
     handleHasRestaurants(){
         const {restaurants}  = this.context
-        console.log(restaurants)
         if(restaurants.length === 0){
             return(
                 <ul className='state-list-items'>
@@ -88,10 +87,10 @@ class RestDis extends React.Component {
 
 
         return (
-            <div className='state_list'>
+            <div className='state_list rest'>
                 {this.handleHasRestaurants()}
                 {this.state.show ? <AddRestaurant /> :null}
-                <button className=' back-btn' tag='button' onClick={() => this.props.history.goBack()}>Back</button>
+                <button className=' back-btn rest' tag='button' onClick={() => this.props.history.goBack()}>Back</button>
                 <button className=' back-btn add' tag='button' onClick={()=>this.showRestaurantAdd()}>{this.handleRestaurantTitle()}</button>
 
             </div>

@@ -22,7 +22,7 @@ class StateDis extends React.Component {
                             </li>
                         )}
                     </ul>
-                    <button className=' back-btn' tag='button' onClick={() => this.props.history.goBack()}>Back</button>
+                    <button className='state-btn back-btn ' tag='button' onClick={() => this.props.history.goBack()}>Back</button>
 
                 </div>
 

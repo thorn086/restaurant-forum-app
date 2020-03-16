@@ -12,9 +12,121 @@ letter-spacing: 2px;
 color: white;
 font-size: 16px;
 font-weight: 600;
+text-shadow: black 1px 1px;
 line-height: 2;
+}
+.error-message{
+height: 4.5rem;
+background-color: rgb(1, 1, 245);
+width: 40rem;
+color:yellow;
+border-radius: 1rem;
+text-shadow: black 1px 1px;
+text-transform: uppercase;
+font-size: 20px;
+text-align: center;
+padding: 1rem;
+margin: 2rem 0 2rem 5rem;
 }
 #username-login, #password-login{
   width: 15rem;
   height: 2rem;
+}
+
+@media (min-width: 420px){
+  .login-info-loc{
+    font-size: 17px;
+  }
+#username-login, #password-login{
+  width: 20rem;
+  height: 2rem;
+  margin:1rem .5rem;
+}
+.back-btn{
+  margin-left: 6rem;
+}
+}
+@media (min-width: 544px){
+  .login-info-loc{
+    font-size: 17px;
+  }
+#username-login, #password-login{
+  width: 22rem;
+  height: 2rem;
+  margin:1rem .5rem;
+}
+.back-btn{
+  display: inline-block;
+  margin: 1rem 0 1rem 2rem;
+}
+}
+@media (min-width: 760px){
+  .login-info-loc{
+    font-size: 17px;
+    text-align: left;
+    margin-left: 2rem;
+    margin-top: 2rem;
+    padding-left: 3rem;
+  }
+#username-login, #password-login{
+  width: 22rem;
+  height: 2rem;
+  margin:1rem .5rem;
+}
+#password-login{
+  margin-left: 3.5rem;
+}
+.back-btn{
+  display: inline-block;
+  margin: 1rem 0 1rem 6rem;
+}
+}
+@media (min-width: 1024px){
+  .state_list{
+    width: 90%;
+    margin: auto;
+  }
+  #log-in{
+    width: 80%;
+    margin:auto;
+  }
+  #password-login{
+    margin-left: 4.5rem;
+  }
+  #username-login{
+    margin-left: 1.7rem;
+
+  }
+}
+@media (min-width: 1440px){
+  
+
+  .login-info-loc{
+    font-size: 20px;
+  }
+  #password-login{
+    margin-left: 4.5rem;
+  }
+  #username-login{
+    margin-left: 1.2rem;
+
+  }
+  .back-btn{
+    display: inline-block;
+    margin: 1rem 0 1rem 8rem;
+  }
+}
+@media (min-width: 1600px){
+ .state_list{
+   width: 60%;
+   margin: auto;
+ }
+ .login-info-loc{
+  font-size: 22px;
+  width: 100%;
+}
+.back-btn{
+  display: inline-block;
+  margin: 1rem 0 1rem 6rem;
+}
 }

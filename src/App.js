@@ -1,6 +1,6 @@
 import React from 'react';
 import RestForumContext from './context'
-import { Switch, Route } from 'react-router-dom'
+import { Switch, Route, withRouter } from 'react-router-dom'
 import Home from './pages/Home/home'
 import State from './pages/State/State'
 import City from './pages/City/City_page'
@@ -18,6 +18,7 @@ class App extends React.Component {
       states: [],
       cities: [],
       restaurants: [],
+      user:{},
       error: null
     }
   }
@@ -40,11 +41,9 @@ class App extends React.Component {
   }
 
   handleAddCity = city => {
-    console.log(city)
     this.setState({
       cities: [...this.state.cities, city]
     })
-    setTimeout(() => console.log(this.state), 2000)
   }
 
   handleAddRestaurants = restAdd => {
@@ -52,6 +51,14 @@ class App extends React.Component {
       restaurants: [...this.state.restaurants, restAdd]
     })
 
+  }
+
+  handleUserInfo= user =>{
+    
+    this.setState({
+      user
+    })
+  
   }
 
   addCities = cities => {
@@ -78,6 +85,8 @@ class App extends React.Component {
   }
   handleDeleteRestaurant = restaurantId => {
     const deletedRestaurant = this.state.restaurants.filter(restaurant => restaurant.id !== parseInt(restaurantId))
+    this.props.history.goBack()
+    
     this.setState({
       restaurants: deletedRestaurant
     })
@@ -88,6 +97,8 @@ class App extends React.Component {
       states: this.state.states,
       cities: this.state.cities,
       restaurants: this.state.restaurants,
+      user: this.state.user,
+      userInfo: this.handleUserInfo,
       addCity: this.handleAddCity,
       deleteCity: this.handleDeleteCity,
       deletedRestaurant: this.handleDeleteRestaurant,
@@ -118,4 +129,4 @@ class App extends React.Component {
   }
 }
 
-export default App;
+export default withRouter(App);

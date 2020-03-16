@@ -1,11 +1,19 @@
+.rest-info-edit{
+    border: 2px solid black;
+    width: 98%;
+    margin: 3rem auto;
+    padding: .5rem;
+    height: auto;
+    background-color:rgb(143, 143, 211);
+}
 .restaurant-edit-form{
     border: 1px solid black;
-    width: 90%;   
+    width: 90%; 
+    margin: 2rem auto;  
     background-color: rgb(70, 70, 193);
-    margin:1rem;
     border-radius: 5%;
     box-shadow: 6px 6px rgb(61, 61, 95);
-    padding: 1rem 1rem 1.5rem 1rem;
+    padding: .5rem;
     text-align: center;
     height: auto;
     letter-spacing: 2px;
@@ -14,19 +22,182 @@
     font-weight: 600;
     line-height: 2;
     }
-.restaurant_field{
-    margin-top: 2rem;
+.restaurant_field_edit{
+    margin: 1rem;
 }
    
 .form{
         margin: .5rem .1rem;
     }
-
-#comments-edit{
+.back-btn.editForm{
+    margin:1rem;
+    }
+#address_edit, #phone_edit{
+        width: 13rem;
+}
+#comments_edit{
     height: 6rem;
-    margin: 0 auto;
     overflow-wrap: normal;
     width: 13rem;
-    position: relative;
     padding: 1rem;
+}
+@media (min-width: 393px){
+    #comments_edit, #address_edit, #phone_edit{
+        width: 20rem;
+    }
+
+}
+@media (min-width: 522px){
+    .rest-info-edit{
+        width: 90%;
+    }
+    .restaurant_field_edit{
+        width: 95%;
+        margin: auto;
+    }
+    #comments_edit, #address_edit, #phone_edit{
+        width: 23rem;
+        font-size: 16px;
+    }
+
+}
+@media (min-width: 650px){
+    .rest-info-edit{
+        width: 80%;
+    }
+    .restaurant_field_edit{
+        width: 90%;
+        margin: auto;
+    }
+    #comments_edit, #address_edit, #phone_edit{
+        margin: 1rem;
+        font-size: 16px;
+    }
+
+}
+@media (min-width: 930px){
+    .rest-info-edit{
+        width: 70%;
+    }
+    .restaurant_field_edit{
+        width: 80%;
+        margin: auto;
+    }
+    #comments_edit, #address_edit, #phone_edit{
+        margin: 1rem;
+        width: 29rem;
+        font-size: 18px;
+    }
+
+}
+@media (min-width: 1250px){
+    .rest-info-edit{
+        width: 70%;
+    }
+    .restaurant_field_edit{
+        width: 80%;
+        margin: auto;
+    }
+    #comments_edit, #address_edit, #phone_edit{
+        margin: 1.5rem;
+        width: 40rem;
+        
+    }
+    .back-btn.editForm{
+        margin:3rem;
+        }
+
+}
+@media (min-width: 1421px){
+    .rest-info-edit{
+        width: 60%;
+        
+        margin:auto;
+    }
+    .restaurant_field_edit{
+        width: 40%;
+        display: inline-block;
+        margin: 4rem auto;
+    }
+    .restaurant_field_edit.comments{
+        margin-right: 18.3rem;
+    }
+    .edit_label{
+        margin-right: 4.5rem;
+
+    }
+    .edit_label_comments{
+        margin-right: 17.5rem;
+    }
+     #address_edit, #phone_edit{
+        margin: 1.5rem;
+        width: 17rem;
+        
+    }
+    #comments_edit{
+        width: 35rem;
+    }
+
+}
+@media (min-width: 1640px){
+    .rest-info-edit{
+        width: 50%;
+        
+        margin:auto;
+    }
+    .restaurant_field_edit{
+        width: 40%;
+        display: inline-block;
+        margin: 4rem auto;
+    }
+    .restaurant_field_edit.comments{
+        margin-right: 18.3rem;
+    }
+    .edit_label{
+        margin-right: 4.5rem;
+
+    }
+    .edit_label_comments{
+        margin-right: 17.5rem;
+    }
+     #address_edit, #phone_edit{
+        margin: 1.5rem;
+        width: 20rem;
+        
+    }
+    #comments_edit{
+        width: 40rem;
+    }
+
+}
+@media (min-width: 2117px){
+    .rest-info-edit{
+        width: 40%;
+        
+        margin:auto;
+    }
+    .restaurant_field_edit{
+        width: 40%;
+        display: inline-block;
+        margin: 3rem auto;
+    }
+    .restaurant_field_edit.comments{
+        margin-right: 23.3rem;
+    }
+    .edit_label{
+        margin-right: 4.5rem;
+
+    }
+    .edit_label_comments{
+        margin-right: 17.5rem;
+    }
+     #address_edit, #phone_edit{
+        margin: 1.5rem;
+        width: 20rem;
+        
+    }
+    #comments_edit{
+        width: 52.7rem;
+    }
+
 }

@@ -13,8 +13,70 @@
     margin: 1rem 0;
     color: white;
     text-transform: uppercase;
+    text-shadow: black 1px 1px;
 }
-.error-name{
+.error-name,.error_title, .author_userId{
     color: white;
     text-transform: uppercase;
+    text-shadow: black 1px 1px;
+}
+.error_title{
+    font-size: 25px;
+    
+}
+@media (min-width: 760px){
+   
+    .delete-btn{
+        font-size: 14px;
+    }
+    .state-items.error{
+        width: 20rem;
+        height: 8rem;
+        margin:3rem 12rem ;
+        padding-top: 3rem;
+    }
+   
+}
+@media (min-width: 1020px){
+    .state_title{
+        font-size: 50px;
+    }
+    .delete-btn{
+        font-size: 16px;
+    }
+    .back-btn.city{
+        margin: 2rem 0 2rem 12rem;
+    }
+    .state-items.error{
+        
+        margin:2rem 21rem ;
+        padding-top: 3rem;
+    }
+}
+@media (min-width: 1350px){
+    .city-nav{
+        width: 80%;
+        margin: auto;
+    }
+    .state-items.error{
+        margin:2rem 22rem ;
+        padding-top: 3rem;
+    }
+    .back-btn.city{
+        margin: 2rem 0 2rem 13rem;
+    }
+}
+@media (min-width: 2560px){
+    .state_title{
+        font-size: 65px;
+    }
+    .state-items.error{
+        width: 25rem;
+        height: 10rem;
+        margin:2rem 25rem ;
+        padding-top: 3rem;
+    }
+    .back-btn.city{
+        margin: 4rem 0 4rem 17rem;
+    }
 }

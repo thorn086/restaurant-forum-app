@@ -17,11 +17,82 @@
 .city_field{
     margin-top: 2rem;
 }
+#name{
+    width: 12rem;
+    height: 1.5rem;
+    margin-bottom: 2rem;
+}
+@media (min-width: 377px){
+    .city-form{
+        width: 90%;
+        margin: 1rem auto;
+    }
     #name{
-        width: 12rem;
-        height: 1.5rem;
-        margin-bottom: 2rem;
+        width: 15rem;
     }
-    .form{
+    .back-btn.city_form{
+        margin:1rem auto;
+    }
+}   
+@media (min-width: 431px){
+    .city-form{
+        width: 80%;
+        margin: 1rem auto;
+    }
+    #name{
+        width: 17rem;
+    }
+    
+}  
+@media (min-width: 539px){
+    .city-form{
+        width: 80%;
+        margin: 1rem auto;
+    }
+    #name{
+        width: 20rem;
+    }
+    .back-btn.city_form{
+        margin:1rem auto;
+    }
+}  
+@media (min-width: 650px){
+    .city-form{
+        width: 60%;
+        margin: 1rem auto;
+        font-size: 18px;
+    }
+    #name{
+        width: 24rem;
+    }
+    .back-btn.city_form{
+        margin:1rem auto;
+    }
+}  
+@media (min-width: 912px){
+    .city-form{
+        width: 50%;
+        margin: 1rem auto;
+        font-size: 18px;
+    }
+    #name{
+        width: 26rem;
+    }
+    .back-btn.city_form{
+        margin:1rem auto;
+    }
+} 
+@media (min-width: 1226px){
+    .city-form{
+        width: 60%;
+        margin: 1rem auto;
+        font-size: 18px;
+    }
+    #name{
         margin: 1rem;
+        width: 30rem;
     }
+    .back-btn.city_form{
+        margin:1rem auto;
+    }
+} 

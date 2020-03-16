@@ -11,6 +11,7 @@ class CityDis extends React.Component {
     static contextType = restForumContext
     state={
         show:false
+        
     }
 
     handleDeleteCity=event=>{
@@ -40,9 +41,12 @@ class CityDis extends React.Component {
     hasError() {
         const { error } = this.props
         return (
-            <ul className='state-list-items'>
-                <li key={error} className='state-items'>
-                    <h3 className='error-name'>{error}</h3>
+            <ul className='state-list-items error'>
+                <li className='state-items error'>
+                <p className='error_title error'>Sorry</p>
+                </li>
+                <li key={error} className='state-items error'>
+                    <p className='error-name'>{error}</p>
                 </li>
             </ul>
         )
@@ -51,7 +55,6 @@ class CityDis extends React.Component {
    
     hasNoError() {
         const { cities } = this.context
-        console.log(cities)
         return (
             <ul className='state-list-items'>
                 {cities.map((newCity, i) =>{
@@ -62,7 +65,8 @@ class CityDis extends React.Component {
                                 <h3 className='state-name'>
                                     {newCity.name}
                                 </h3>
-                            </NavLink> 
+                            </NavLink>
+                            <p className='author_userId'> Added By User: {newCity.author}</p> 
                             <button value={newCity.id} className='delete-btn' type='button' onClick={this.handleDeleteCity}>Delete</button>
 
                         </li>)
@@ -70,7 +74,7 @@ class CityDis extends React.Component {
             </ul>
         )
     }
-    showCityAdd(){
+    showCityAdd = () => {
         this.setState({
             show:!this.state.show
         })
@@ -96,9 +100,9 @@ class CityDis extends React.Component {
         return (
             <div className='state_list'>
                 {(error === null) ? this.hasNoError() : this.hasError()}
-                {this.state.show ? <AddCity /> :null}
-                <button className=' back-btn' tag='button' onClick={()=> this.props.history.goBack()}>Back</button>
-                <button className=' back-btn' tag='button' onClick={()=> this.showCityAdd()}>{this.handleCityTitle()}</button>
+                {this.state.show ? <AddCity show={this.showCityAdd}/> :null}
+                <button className=' back-btn city' tag='button' onClick={()=> this.props.history.goBack()}>Back</button>
+                <button className=' back-btn city' tag='button' onClick={()=> this.showCityAdd()}>{this.handleCityTitle()}</button>
                 
             </div>
         )
