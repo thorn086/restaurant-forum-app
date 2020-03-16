@@ -18,7 +18,7 @@ line-height: 2;
 .error-message{
 height: 4.5rem;
 background-color: rgb(1, 1, 245);
-width: 40rem;
+width: auto;
 color:yellow;
 border-radius: 1rem;
 text-shadow: black 1px 1px;
