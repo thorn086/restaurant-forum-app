@@ -12,14 +12,19 @@ class NavBar extends React.Component {
     renderLogoutLink() {
         return (
             <div className='navigation__item'>
-                <li className='navigation__item' onClick={this.handleLogoutClick}>
+                <li className='navigation__item'>
                     <div className='nav-btn'>
-                        <NavLink to='/' className='link-btn'> Logout</NavLink>
+                        <NavLink to='/' className='link-btn'>Home</NavLink>
                     </div>
                 </li>
                 <li className='navigation__item'>
                     <div className='nav-btn'>
-                        <NavLink to='/' className='link-btn'>Home</NavLink>
+                        <NavLink to='/states' className='link-btn'>States</NavLink>
+                    </div>
+                </li>
+                <li className='navigation__item' onClick={this.handleLogoutClick}>
+                    <div className='nav-btn'>
+                        <NavLink to='/' className='link-btn'> Logout</NavLink>
                     </div>
                 </li>
             </div>
@@ -41,11 +46,6 @@ class NavBar extends React.Component {
                 <li className='navigation__item'>
                     <div className='nav-btn'>
                         <NavLink to='/' className='link-btn'>Home</NavLink>
-                    </div>
-                </li>
-                <li className='navigation__item'>
-                    <div className='nav-btn'>
-                        <NavLink to='/states' className='link-btn'>States</NavLink>
                     </div>
                 </li>
             </div>

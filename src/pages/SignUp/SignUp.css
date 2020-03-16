@@ -5,24 +5,16 @@
     height: auto;
     background-color: rgb(143, 143, 211);
     box-shadow: -2px -2px rgb(61, 61, 95);
-    
     padding: 1rem 1rem 1.5rem 1rem;
     text-align: center;
-    height: auto;
     letter-spacing: 2px;
    padding: 1rem;
-   
     font-weight: 600;
     line-height: 2;
 }
-h2{
-    text-shadow:white 1px 1px;
-    font-size: 36px;
-    color: black;
-}
+
 .signup-form-box{
-    border: 1px solid black;
-width: 100%;   
+    border: 1px solid black;  
 background-color: rgb(70, 70, 193);
 
 border-radius: 5%;
@@ -57,4 +49,99 @@ line-height: 2;
 .signup_input{
     width:15rem;
     height: 2rem;
+}
+@media (min-width:457px){
+    .signup-form-box{
+        width: 95%;
+    }
+    .signup_input{
+        width: 22rem;
+    }
+}
+@media (min-width:597px){
+    .signup-form{
+        width: 95%;
+        margin:auto;
+        
+    }
+    .title__page{
+        margin-bottom: 2rem;
+        font-size: 40px;
+    }
+    .signup-form-box{
+        width: 90%;
+        margin:auto;
+    }
+    .signup_input{
+        width: 24rem;
+    }
+}
+@media (min-width:698px){
+    .signup-form{
+        width: 95%;
+        margin:auto;
+        
+    }
+    .title__page{
+        margin-bottom: 2rem;
+        font-size: 40px;
+    }
+    .signup-field{
+        text-align: left;
+    }
+    .signup-form-box{
+        width: 98%;
+        margin:auto;
+    }
+    .signup_input{
+        width: 22rem;
+    }
+    #password{
+        margin-left:3.2rem ;
+    }
+    #first_name {
+        margin-left: 2.2rem;
+    }
+    #last_name{
+        margin-left: 2.5rem;
+    }
+}
+@media (min-width:1000px){
+    .signup-form{
+        width: 75%;
+        margin:auto;   
+    }
+    .signup-form-box{
+        width: 98%;
+        margin:auto;
+    }
+    .signup-password-req{
+        padding: 60px;
+    }
+}
+@media (min-width:1350px){
+    .signup-form{
+        width: 55%;
+        margin:auto;   
+    }
+    .title__page{
+        font-size: 60px;
+    }
+    .signup-form-box{
+        width: 98%;
+        margin:auto;
+    }
+    .signup-password-req{
+       font-size: 20px;
+    }
+}
+@media (min-width:1950px){
+    .signup-form{
+        width: 35%;
+        margin:auto;   
+    }
+    .signup-form-box{
+        width: 98%;
+        margin:auto;
+    }
 }

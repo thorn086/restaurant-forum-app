@@ -41,21 +41,21 @@ class Login extends React.Component {
         this.setState({ error: res.error })
       })
   };
-handleInccorectLogin(){
-  if(this.state.error ===null){
-    return(
-      <div></div>
-    )
-  }else{
-return (
-  <div className='error-message'>
-  <strong>
-    {this.state.error}
-  </strong>
-</div>
-)
+  handleInccorectLogin() {
+    if (this.state.error === null) {
+      return (
+        <div></div>
+      )
+    } else {
+      return (
+        <div className='error-message'>
+          <strong>
+            {this.state.error}
+          </strong>
+        </div>
+      )
+    }
   }
-}
   render() {
 
     return (
@@ -83,7 +83,7 @@ return (
               </div>
               <div>
               </div>
-             {this.handleInccorectLogin()}
+              {this.handleInccorectLogin()}
             </div>
             <button className='back-btn' type='submit' value='LogIn'>
               Log In
