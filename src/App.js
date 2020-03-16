@@ -18,14 +18,19 @@ class App extends React.Component {
       states: [],
       cities: [],
       restaurants: [],
-      user:{},
+      user: {},
       error: null
     }
   }
 
 
   componentDidMount() {
-    fetch(`${config.API_ENDPOINT}/states`)
+    fetch(`${config.API_ENDPOINT}/states`, {
+      method: 'GET',
+      headers: {
+        'content-type': 'application/json',
+      }
+    })
       .then(stateResult => {
         if (!stateResult.ok)
           throw new Error(stateResult.statusText)
@@ -53,12 +58,12 @@ class App extends React.Component {
 
   }
 
-  handleUserInfo= user =>{
-    
+  handleUserInfo = user => {
+
     this.setState({
       user
     })
-  
+
   }
 
   addCities = cities => {
@@ -86,7 +91,7 @@ class App extends React.Component {
   handleDeleteRestaurant = restaurantId => {
     const deletedRestaurant = this.state.restaurants.filter(restaurant => restaurant.id !== parseInt(restaurantId))
     this.props.history.goBack()
-    
+
     this.setState({
       restaurants: deletedRestaurant
     })
