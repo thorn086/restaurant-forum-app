@@ -38,6 +38,7 @@ class Login extends React.Component {
         password.value = ''
       })
       .catch(res => {
+        console.log('this is in the res back',res)
         this.setState({ error: res.error })
       })
   };
@@ -50,6 +51,7 @@ class Login extends React.Component {
       return (
         <div className='error-message'>
           <strong>
+            {console.log(this.state.error)}
             {this.state.error}
           </strong>
         </div>
