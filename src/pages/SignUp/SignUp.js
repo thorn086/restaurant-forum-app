@@ -20,7 +20,7 @@ class SignUp extends React.Component {
         history.push(destination)
     };
 
-    handleSubmit = e => {
+    handleSubmit = (e) => {
         e.preventDefault()
         const { first_name, last_name, email, password } = e.target
         ApiAuthService.postUser({
@@ -64,7 +64,7 @@ class SignUp extends React.Component {
                 <div className='signup-form'>
                     <NavBar />
 
-                    <form className='signup-form-box' onSubmit={this.handleSubmit}>
+                    <form className='signup-form-box' onSubmit={this.handleSubmit} >
 
                         <div className='signup-password-req'>
                             <strong>
@@ -131,17 +131,14 @@ class SignUp extends React.Component {
                                 required
                             />
                         </div>
-
-
-
-                    </form>
-                    <div className='button-box'>
-                        <button className='back-btn submit' type='submit' value='SignUp'>
-                            Sign Up
+                        <div className='button-box' >
+                            <button className='back-btn submit' type='submit' value='SignUp'>
+                                Sign Up
                         </button>
-                        <button className=' back-btn' tag='button' onClick={() => this.props.history.goBack()}>Back</button>
-                    </div>
-                   {this.handleInccorectLogin()}
+                            <button className=' back-btn submit' tag='button' onClick={() => this.props.history.goBack()}>Back</button>
+                        </div>
+                        {this.handleInccorectLogin()}
+                    </form>
                 </div>
             </div>
         )
