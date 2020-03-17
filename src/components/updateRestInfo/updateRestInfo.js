@@ -78,7 +78,7 @@ class EditRestaurant extends React.Component {
                         <p>City edited by: {TokenService.getUserId()}</p>
                     </div>
                     <button type='submit' className='back-btn editForm'>Update</button>
-                    <button className=' back-btn info' tag='button' onClick={() => this.props.history.goBack()}>Back</button>
+                    <button className=' back-btn editForm' tag='button' onClick={() => this.props.history.goBack()}>Back</button>
                 </form>
             </div>
         )
