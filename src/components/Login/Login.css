@@ -1,10 +1,10 @@
 .login-info-loc{
   border: 1px solid black;
 width: 90%;   
-background-color: rgb(70, 70, 193);
+background-color: rgba(70, 70, 193, 0.9);
 margin:1rem;
 border-radius: 5%;
-box-shadow: 6px 6px rgb(61, 61, 95);
+box-shadow: 3px 3px rgb(61, 61, 95);
 padding: 1rem;
 text-align: center;
 height: auto;

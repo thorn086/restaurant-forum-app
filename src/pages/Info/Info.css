@@ -1,18 +1,18 @@
 .rest-info{
-    border: 2px solid black;
+
     width: 95%;
     margin-top: 3rem;
     margin:auto;
     height: auto;
-    background-color:rgb(143, 143, 211);
+   
 }
 .rest-info-main{
     border: 1px solid black;  
     width: 75%; 
-background-color: rgb(70, 70, 193);
+background-color: rgba(70, 70, 193, 0.9);
 margin:5rem 2.3rem;
 border-radius: 5%;
-box-shadow: 6px 6px rgb(61, 61, 95);
+box-shadow: 3px 3px rgb(61, 61, 95);
 padding: 1rem 1rem 1.5rem 1rem;
 text-align: center;
 height: auto;
@@ -35,10 +35,10 @@ letter-spacing: 2px;
 .rest-info-loc {
 border: 1px solid black;
 width: 90%;   
-background-color: rgb(70, 70, 193);
+background-color: rgba(70, 70, 193, 0.9);
 margin:1rem;
 border-radius: 5%;
-box-shadow: 6px 6px rgb(61, 61, 95);
+box-shadow: 3px 3px rgb(61, 61, 95);
 padding: 1rem 1rem 1.5rem 1rem;
 text-align: center;
 height: auto;

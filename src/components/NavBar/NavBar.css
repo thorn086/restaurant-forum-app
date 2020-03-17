@@ -16,7 +16,7 @@
     .navigation__button{
         margin: 0;
         border: 1px solid black;
-    background-color:  white;
+    background-color:  rgba(255, 255, 255, 0.824);
     height: 3rem;
     width: 3rem;
     position: fixed;
@@ -41,7 +41,7 @@
     position: fixed;
     top: 1.75rem;
     right: 1.75rem;
-    background-image: radial-gradient( #2049ebf9, rgb(171, 170, 170) 98%);
+    background-image: radial-gradient( #959596, rgb(6, 6, 6) 98%);
     z-index: 1000;
     transition: transform .8s  cubic-bezier(0.86, 0, 0.07, 1);
     }
