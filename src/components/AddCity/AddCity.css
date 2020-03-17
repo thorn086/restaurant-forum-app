@@ -17,6 +17,9 @@
 .city_field{
     margin-top: 2rem;
 }
+.back-btn.city_form{
+    margin: 0;
+}
 #name{
     width: 12rem;
     height: 1.5rem;

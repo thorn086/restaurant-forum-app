@@ -14,7 +14,6 @@ class Info extends React.Component {
     componentDidMount() {
         MiscApiServices.getAllStates()
             .then(states => {
-                console.log('inside the state fetch', states)
                 this.context.addStates(states)
             })
             .catch(error => {
@@ -22,7 +21,6 @@ class Info extends React.Component {
             })
         MiscApiServices.getAllRestaurants()
             .then(restaurants => {
-                console.log('inside the restaurants fetch', restaurants)
                 this.context.addRestaurants(restaurants)
             })
             .catch(error => {
