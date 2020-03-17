@@ -68,7 +68,7 @@ class EditRestaurant extends React.Component {
                     </div>
                     <div className='restaurant_field_edit'>
                         <label htmlFor='restaurant_name' className='edit_label'>Restaurant Phone</label>
-                        <input type='text' id='phone_edit' name='restaurant-phone' defaultValue={oldInfo.phone}></input>
+                        <input type='tel' id='phone_edit' name='restaurant-phone' defaultValue={oldInfo.phone}></input>
                     </div>
                     <div className='restaurant_field_edit comments'>
                         <label htmlFor='restaurant_name' className='edit_label_comments'>Comments</label>

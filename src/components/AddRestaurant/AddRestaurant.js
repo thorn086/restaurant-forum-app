@@ -67,7 +67,7 @@ class AddRestaurant extends React.Component {
                 </div>
                 <div className='restaurant_field'>
                     <label htmlFor='restaurant_name'>Restaurant Phone</label>
-                    <input type='text' id='phone' name='restaurant-phone' required></input>
+                    <input type='tel' id='phone' name='restaurant-phone' required></input>
                 </div>
                 <div className='restaurant_field'>
                     <label htmlFor='restaurant_name'>Restaurant State</label>
