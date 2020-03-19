@@ -14,7 +14,7 @@ https://github.com/thorn086/restaurant-forum-api
 
 https://restaurant-forum-app.now.sh/
 
-![Restaurant Forum Home Page](src/images/home.png)
-![Restaurant Forum State Page](src/imgages/States.png)
+![Restaurant Forum Home Page](src/images/Home.png)
+![Restaurant Forum State Page](src/images/States.png)
 ![Restaurant Forum Login Page](src/images/Login.png)
 ![Restaurant Forum Sign Up Page](src/images/Sign-up.png)
