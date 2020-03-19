@@ -4,7 +4,7 @@
     text-align: center;
     padding: 5rem .5rem 1rem .5rem;
     color:rgb(245, 245, 245);
-    text-shadow: -1px -1px rgb(0, 0, 0);
+    text-shadow: -1px -1px rgba(123, 2, 142, 0.9);
     font-size: 55px;
     margin-top: 3rem;
 }

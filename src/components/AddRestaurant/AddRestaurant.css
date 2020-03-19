@@ -15,7 +15,17 @@
     line-height: 2;
     }
 .restaurant_field{
-    margin-top: 2rem;
+    margin:2rem 0;
+}
+.error_field{
+    background-color: rgb(53, 53, 53);
+    color: red;
+    text-align: left;
+    font-size: 12px;
+    padding: 1rem;
+    border: 2px solid white;
+    border-radius: 2rem;
+    text-shadow: 1px 1px black;
 }
    
 .form{
@@ -23,19 +33,105 @@
     }
 #state{
     background-color: white;
-    width: 9rem;
     text-align: center;
+}
+
+#state,#resName, #address, #phone,#comments{
+    padding-left: 5px;
+    border: 3px solid black;
+    font-size: 14px;
+    font-weight: 500;
+    box-shadow: -1px -1px white;
 }
 
 .resForm, #author{
     margin: 1rem;
 }
-#resName, #address, #phone{
-    width: 13rem;
-    height: 1.5rem;
+#resName, #address, #phone, #state{
+    width: 15rem;
+    height: 2rem;
 }
 #comments{
     height: 6rem;
-    width: 13rem;
+    width: 15rem;
     padding: 1rem;
+}
+.back-btn.resForm{
+    margin: auto;
+}
+@media (min-width: 426px){
+    .restaurant-form{
+        width: 80%;
+        margin:auto;
+    }
+    #resName, #address, #phone, #state{
+        width: 20rem;
+        height: 2rem;
+    }
+    #comments{
+        height: 6rem;
+        width: 20rem;
+        padding: 1rem;
+    }
+  
+}
+@media (min-width: 603px){
+    .restaurant-form{
+        width: 75%;
+        margin:auto;
+    }
+    #resName, #address, #phone, #state{
+        width: 20rem;
+        height: 2rem;
+    }
+    #comments{
+        height: 6rem;
+        width: 20rem;
+        padding: 1rem;
+    }
+  
+}
+@media (min-width: 699px){
+    .restaurant-form{
+        width: 95%;
+        margin:auto;
+    }
+    .restaurant_field{
+        padding-left: 10px;
+        text-align: left;
+    }
+    .error_field{
+        font-size: 16px;
+        padding-left: 5rem;
+    }
+    #resName, #address, #phone, #state{
+        width: 23rem;
+        height: 2rem;
+    }
+     #phone{
+        margin-left: 3rem;
+    }
+    #resName{
+        margin-left: 3.3rem;
+    }
+    #state{
+        margin-left: 3.5rem;
+    }
+
+    #address{
+        margin-left: 2rem;
+    }
+    #comments{
+        height: 6rem;
+        width: 23rem;
+        padding: 1rem;
+        margin-left: 7.1rem;
+        
+    }
+    .comments_rest{
+       position: relative;
+       top:-80px;
+        
+    }
+ 
 }

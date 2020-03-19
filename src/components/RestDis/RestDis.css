@@ -1,5 +1,5 @@
 .add{
-width: auto;}
+width: 13rem;}
 
 .none{
     color: white;
@@ -15,15 +15,15 @@ width: auto;}
         width: 80%;
     }
     .back-btn.rest,.back-btn.add{
-        margin:4rem 0 4rem 7rem
+        margin:4rem 0 4rem 8rem;
     }
 }
-@media (min-width: 1020px){
+@media (min-width: 1320px){
     .state_list.rest{
         width: 70%;
     }
     .back-btn.rest,.back-btn.add{
-        margin:4rem 0 4rem 11rem
+        margin:4rem 0 4rem 11rem;
     }
 }
 @media (min-width: 1950px){
@@ -31,14 +31,14 @@ width: auto;}
         width: 60%;
     }
     .back-btn.rest,.back-btn.add{
-        margin:4rem 0 4rem 15rem
+        margin:4rem 0 4rem 15rem;
     }
 }
-@media (min-width: 1950px){
+@media (min-width: 2250px){
     .state_list.rest{
         width: 40%;
     }
     .back-btn.rest,.back-btn.add{
-        margin:4rem 0 4rem 12.5rem
+        margin:4rem 0 4rem 13.5rem;
     }
 }

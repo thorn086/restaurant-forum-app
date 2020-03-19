@@ -180,7 +180,8 @@
     .restaurant_field_edit{
         width: 40%;
         display: inline-block;
-        margin: 3rem auto;
+        margin: 1rem auto;
+        text-align: left;
     }
     .restaurant_field_edit.comments{
         margin-right: 23.3rem;
@@ -193,12 +194,14 @@
         margin-right: 17.5rem;
     }
      #address_edit, #phone_edit{
-        margin: 1.5rem;
+        margin: 1.5rem 1.5rem 1.5rem 0;
         width: 20rem;
         
     }
     #comments_edit{
-        width: 52.7rem;
+        width: 42.7rem;
+        margin: 1.5rem 1.5rem 1.5rem 0;
+       
     }
 
 }

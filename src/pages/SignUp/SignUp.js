@@ -2,7 +2,7 @@ import React from 'react'
 import NavBar from '../../components/NavBar/NavBar'
 import './SignUp.css'
 import ApiAuthService from '../../services/api-auth-service'
-
+import validateSignUp from './ValSignUp'
 
 class SignUp extends React.Component {
     static defaultProps = {
@@ -12,7 +12,10 @@ class SignUp extends React.Component {
         }
     }
 
-    state = { error: null }
+    state = { 
+        error: null,
+        errors:[]
+     }
 
     handleRegistrationSuccess = () => {
         const { location, history } = this.props
@@ -23,6 +26,12 @@ class SignUp extends React.Component {
     handleSubmit = (e) => {
         e.preventDefault()
         const { first_name, last_name, email, password } = e.target
+        const errors = validateSignUp(password.value);
+        
+        if(errors.length > 0){
+            this.setState({errors})
+            return;
+        }
         ApiAuthService.postUser({
             first_name: first_name.value,
             last_name: last_name.value,
@@ -57,6 +66,8 @@ class SignUp extends React.Component {
     }
 
     render() {
+        const {errors} = this.state
+        const signUpErrors = errors.map(error => (<p key={error}><span className='error-title'>Error:</span>{error}</p>))
         return (
             <div className='signup-title'>
                 <h2 className='state_title'>Sign Up Here</h2>
@@ -67,7 +78,7 @@ class SignUp extends React.Component {
                     <form className='signup-form-box' onSubmit={this.handleSubmit} >
 
                         <div className='signup-password-req'>
-                            <strong>
+                            <strong className='password_description'>
                                 Important Password requirements:<br />
                                 Must be between 8 and 50 characters<br />
                                 Must not begin or end with a space<br />
@@ -128,9 +139,11 @@ class SignUp extends React.Component {
                                 name='password'
                                 id='password'
                                 placeholder='Password'
-                                required
+                               
                             />
                         </div>
+                        <div className='error_field' style= {{display: (errors < 1) ? 'none':'block'}} >{signUpErrors}</div>
+
                         <div className='button-box' >
                             <button className='back-btn submit' type='submit' value='SignUp'>
                                 Sign Up

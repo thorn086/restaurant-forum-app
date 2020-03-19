@@ -11,13 +11,16 @@ class EditRestaurant extends React.Component {
 
     static contextType = RestForumContext
 
+    state={
+        errors:[]
+    }
 
     updateRestaurant = (e) => {
         e.preventDefault()
         const userId = Number(TokenService.getUserId())
         const id = this.props.match.params.id
         const { phone_edit, address_edit, comments_edit, author = userId } = e.target
-
+      
         let updatedRestaurant = {}
         if (phone_edit.value !== '' && phone_edit.value !== null) {
             updatedRestaurant.phone = phone_edit.value
@@ -52,7 +55,6 @@ class EditRestaurant extends React.Component {
         const { restaurants } = this.context
 
         const [oldInfo] = restaurants.filter(restaurant => restaurant.id === parseInt(id))
-
         return (
             <div className='rest-info-edit'>
                 <NavBar />

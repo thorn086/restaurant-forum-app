@@ -13,6 +13,14 @@
     padding: 0;
     margin: 0;
 }
+.state-name{
+    background-color: rgba(123, 2, 142, 0.9);
+    height: 3rem;
+    padding: .8rem 0;
+    border: 1px solid white;
+    border-radius: 2rem;
+    box-shadow: 3px 3px black;
+}
 .state-items{
     border: 1px solid black;
     background-color: rgba(70, 70, 193, 0.9);
@@ -26,9 +34,10 @@
 }
 .back-btn{
     border: 1px solid black;
-    background-color: rgba(98, 98, 250, 0.9);
+    background-color: rgba(123, 2, 142, 0.9);
     text-shadow: -1px -1px black;
     margin:1rem 3rem;
+    border: 1px solid white;
     border-radius: 8%;
     box-shadow: 3px 3px rgb(61, 61, 95);
     padding: 1rem 1rem 1.5rem 1rem;
@@ -36,7 +45,7 @@
     height: 3rem;
     letter-spacing: 2px;
     width: 12.8rem;
-    border-radius: 6%;
+    border-radius: 1rem;
     color: white;
     font-size: 16px;
     font-family: 'Fjalla One', sans-serif;

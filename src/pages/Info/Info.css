@@ -20,7 +20,7 @@ letter-spacing: 2px;
 
 }
 .rest-info-title{
- 
+    border-bottom: 3px solid white;
     color: white;
 }
 .info-box{
@@ -69,6 +69,9 @@ line-height: 2;
     }
 }
 @media (min-width: 1094px){
+    .rest-info-title{
+        font-size: 40px;
+    }
     .rest-info{
         width:85%;
         margin: auto;
@@ -81,6 +84,9 @@ line-height: 2;
     }
 }
 @media (min-width: 1440px){
+    .rest-info-title{
+        font-size: 50px;
+    }
     .rest-info{
         width:65%;
         margin: auto;

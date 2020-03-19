@@ -4,7 +4,7 @@ import { withRouter } from 'react-router-dom'
 import TokenService from '../../services/token-services'
 import restForumContext from '../../context'
 import './AddRestaurant.css'
-
+import validate from './ValError'
 class AddRestaurant extends React.Component {
     static defaultProps = {
         history: {
@@ -16,19 +16,31 @@ class AddRestaurant extends React.Component {
     }
     static contextType = restForumContext
 
+    state={   
+    errors: []
+    }
     handleSubmit = event => {
         event.preventDefault()
         const { id } = this.props.match.params
         const stateName=event.target['restaurant-state'].value.split(' ')
-       
-     
+        const name =event.target['restaurant-name'].value
+        const address= event.target['restaurant-address'].value
+        const phone= event.target['restaurant-phone'].value
+        const comments=event.target['restaurant-comments'].value
+        
+        const errors = validate(name,address,comments);
+        if(errors.length > 0){
+            this.setState({errors})
+            return;
+        }
+
         const newRestaurant = {
-            name: event.target['restaurant-input'].value,
-            address: event.target['restaurant-address'].value,
-            phone: event.target['restaurant-phone'].value,
+            name,
+            address,
+            phone,
             state_id: parseInt(stateName[0]),
             city_id: id,
-            comments:event.target['restaurant-comments'].value,
+            comments,
         }
 
         fetch(`${config.API_ENDPOINT}/city/${id}`, {
@@ -55,23 +67,29 @@ class AddRestaurant extends React.Component {
 
 
     render() {
+        const {errors} = this.state
+        const valErrors = errors.map(error => (<p key={error}><span className='error-title'>Error:</span>{error}</p>))
+
         return (
+            
             <form className="restaurant-form" onSubmit={this.handleSubmit}>
+                <div className='error_field' style= {{display: (errors < 1) ? 'none':'block'}} >{valErrors}</div>
                 <div className='restaurant_field'>
-                    <label htmlFor='restaurant_name'>Restaurant Name</label>
-                    <input type='text' id='resName' name='restaurant-input' required></input>
+                    <label htmlFor='restaurant-name'>Restaurant Name</label>
+                    <input type='text' id='resName' name='restaurant-name'placeholder='Enter Restaurant Name'></input>
                 </div>
                 <div className='restaurant_field'>
-                    <label htmlFor='restaurant_name'>Restaurant Address</label>
-                    <input type='text' id='address' name='restaurant-address' required></input>
+                    <label htmlFor='restaurant-address'>Restaurant Address</label>
+                    <input type='text' id='address' name='restaurant-address' placeholder='Enter Restaurant Address' ></input>
                 </div>
                 <div className='restaurant_field'>
-                    <label htmlFor='restaurant_name'>Restaurant Phone</label>
-                    <input type='tel' id='phone' name='restaurant-phone' required></input>
+                    <label htmlFor='restaurant-phone'>Restaurant Phone</label>
+                    <input type='tel' id='phone' pattern='[0-9]{9}' name='restaurant-phone' placeholder='555-555-5555' ></input>
                 </div>
                 <div className='restaurant_field'>
-                    <label htmlFor='restaurant_name'>Restaurant State</label>
-                    <select type='text' id='state' name='restaurant-state' required>
+                    <label htmlFor='restaurant-state'>Restaurant State</label>
+                    <select type='text' id='state' name='restaurant-state' >
+                        <option>0 Select a state</option>
                         <option>1 Alabama</option>
                         <option>2 Alaska</option>
                         <option>3 Arizona</option>
@@ -125,8 +143,8 @@ class AddRestaurant extends React.Component {
                     </select>
                 </div>
                 <div className='restaurant_field'>
-                    <label htmlFor='restaurant_name'>Comments</label>
-                    <textarea id='comments' name='restaurant-comments'></textarea>
+                    <label htmlFor='restaurant_comments'><span className='comments_rest'>Comments</span></label>
+                    <textarea id='comments' name='restaurant-comments' placeholder='What shoule we know about this Restaurant?'></textarea>
                 </div>
                 <button type='submit' className='back-btn resForm'>Add</button>
             </form>
