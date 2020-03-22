@@ -1,14 +1,14 @@
-import React from 'react'
-import config from '../../config'
-import { withRouter } from 'react-router-dom'
-import TokenService from '../../services/token-services'
-import restForumContext from '../../context'
-import './AddRestaurant.css'
-import validate from './ValError'
+import React from 'react';
+import config from '../../config';
+import { withRouter } from 'react-router-dom';
+import TokenService from '../../services/token-services';
+import restForumContext from '../../context';
+import './AddRestaurant.css';
+import validate from './ValError';
 class AddRestaurant extends React.Component {
     static defaultProps = {
         history: {
-            push: () => { }
+            push: () => {}
         },
         match: {
             params: {}
@@ -21,12 +21,12 @@ class AddRestaurant extends React.Component {
     }
     handleSubmit = event => {
         event.preventDefault()
-        const { id } = this.props.match.params
-        const stateName=event.target['restaurant-state'].value.split(' ')
-        const name =event.target['restaurant-name'].value
-        const address= event.target['restaurant-address'].value
-        const phone= event.target['restaurant-phone'].value
-        const comments=event.target['restaurant-comments'].value
+        const { id } = this.props.match.params;
+        const stateName=event.target['restaurant-state'].value.split(' ');
+        const name =event.target['restaurant-name'].value;
+        const address= event.target['restaurant-address'].value;
+        const phone= event.target['restaurant-phone'].value;
+        const comments=event.target['restaurant-comments'].value;
         
         const errors = validate(name,address,comments);
         if(errors.length > 0){
@@ -41,7 +41,7 @@ class AddRestaurant extends React.Component {
             state_id: parseInt(stateName[0]),
             city_id: id,
             comments,
-        }
+        };
 
         fetch(`${config.API_ENDPOINT}/city/${id}`, {
             method: 'POST',
@@ -53,15 +53,15 @@ class AddRestaurant extends React.Component {
         })
             .then(results => {
                 if (!results.ok)
-                    return results.json().then(e => Promise.reject(e))
-                return results.json()
+                    return results.json().then(e => Promise.reject(e));
+                return results.json();
             })
             .then(restaurant => {
-                this.context.addRestaurant(restaurant)
-                window.location.reload()
+                this.context.addRestaurant(restaurant);
+                window.location.reload();
             })
             .catch(error => {
-                console.error({ error })
+                console.error({ error });
             })
     }
 
@@ -76,19 +76,19 @@ class AddRestaurant extends React.Component {
                 <div className='error_field' style= {{display: (errors < 1) ? 'none':'block'}} >{valErrors}</div>
                 <div className='restaurant_field'>
                     <label htmlFor='restaurant-name'>Restaurant Name</label>
-                    <input type='text' id='resName' name='restaurant-name'placeholder='Enter Restaurant Name'></input>
+                    <input type='text' id='restaurant-name' name='restaurant-name'placeholder='Enter Restaurant Name'></input>
                 </div>
                 <div className='restaurant_field'>
                     <label htmlFor='restaurant-address'>Restaurant Address</label>
-                    <input type='text' id='address' name='restaurant-address' placeholder='Enter Restaurant Address' ></input>
+                    <input type='text' id='restaurant-address' name='restaurant-address' placeholder='Enter Restaurant Address' ></input>
                 </div>
                 <div className='restaurant_field'>
                     <label htmlFor='restaurant-phone'>Restaurant Phone</label>
-                    <input type='tel' id='phone' pattern='[0-9]{9}' name='restaurant-phone' placeholder='555-555-5555' ></input>
+                    <input type='tel' id='restaurant-phone' pattern="^(?:\(\d{3}\)|\d{3})[- ]?\d{3}[- ]?\d{4}$" x-autocompletetype="tel" name='restaurant-phone' placeholder='555-555-5555' autofocus></input>
                 </div>
                 <div className='restaurant_field'>
                     <label htmlFor='restaurant-state'>Restaurant State</label>
-                    <select type='text' id='state' name='restaurant-state' >
+                    <select type='text' id='restaurant-state' name='restaurant-state' >
                         <option>0 Select a state</option>
                         <option>1 Alabama</option>
                         <option>2 Alaska</option>
@@ -144,7 +144,7 @@ class AddRestaurant extends React.Component {
                 </div>
                 <div className='restaurant_field'>
                     <label htmlFor='restaurant_comments'><span className='comments_rest'>Comments</span></label>
-                    <textarea id='comments' name='restaurant-comments' placeholder='What shoule we know about this Restaurant?'></textarea>
+                    <textarea id='restaurant_comments' name='restaurant-comments' placeholder='What shoule we know about this Restaurant?'></textarea>
                 </div>
                 <button type='submit' className='back-btn resForm'>Add</button>
             </form>

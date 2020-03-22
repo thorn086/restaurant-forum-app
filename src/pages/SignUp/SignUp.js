@@ -1,35 +1,35 @@
-import React from 'react'
-import NavBar from '../../components/NavBar/NavBar'
-import './SignUp.css'
-import ApiAuthService from '../../services/api-auth-service'
-import validateSignUp from './ValSignUp'
+import React from 'react';
+import NavBar from '../../components/NavBar/NavBar';
+import './SignUp.css';
+import ApiAuthService from '../../services/api-auth-service';
+import validateSignUp from './ValSignUp';
 
 class SignUp extends React.Component {
-    static defaultProps = {
+    static defaultProps= {
         location: {},
         history: {
-            push: () => { },
+            push: () => {}
         }
     }
 
     state = { 
         error: null,
         errors:[]
-     }
+     };
 
     handleRegistrationSuccess = () => {
-        const { location, history } = this.props
+        const { location, history } = this.props;
         const destination = (location.state || {}).from || '/login'
-        history.push(destination)
+        history.push(destination);
     };
-
+    
     handleSubmit = (e) => {
         e.preventDefault()
         const { first_name, last_name, email, password } = e.target
         const errors = validateSignUp(password.value);
         
         if(errors.length > 0){
-            this.setState({errors})
+            this.setState({errors});
             return;
         }
         ApiAuthService.postUser({
@@ -43,17 +43,17 @@ class SignUp extends React.Component {
                 last_name.value = ''
                 email.value = ''
                 password.value = ''
-                this.handleRegistrationSuccess()
+                this.handleRegistrationSuccess();
             })
             .catch(res => {
-                this.setState({ error: res.error })
-            })
+                this.setState({ error: res.error });
+            });
     };
     handleInccorectLogin() {
         if (this.state.error === null) {
             return (
                 <div></div>
-            )
+            );
         } else {
             return (
                 <div className='error-message'>
@@ -61,16 +61,17 @@ class SignUp extends React.Component {
                         {this.state.error}
                     </strong>
                 </div>
-            )
+            );
         }
     }
 
     render() {
-        const {errors} = this.state
-        const signUpErrors = errors.map(error => (<p key={error}><span className='error-title'>Error:</span>{error}</p>))
+        const {errors} = this.state;
+        //handles any validation errors from the form
+        const signUpErrors = errors.map(error => (<p key={error}><span className='error-title'>Error:</span>{error}</p>));
         return (
             <div className='signup-title'>
-                <h2 className='state_title'>Sign Up Here</h2>
+                <h1 className='state_title'>Sign Up Here</h1>
 
                 <div className='signup-form'>
                     <NavBar />
@@ -145,7 +146,7 @@ class SignUp extends React.Component {
                         <div className='error_field' style= {{display: (errors < 1) ? 'none':'block'}} >{signUpErrors}</div>
 
                         <div className='button-box' >
-                            <button className='back-btn submit' type='submit' value='SignUp'>
+                            <button className='back-btn submit form' type='submit' value='SignUp'>
                                 Sign Up
                         </button>
                             <button className=' back-btn submit' tag='button' onClick={() => this.props.history.goBack()}>Back</button>
@@ -154,8 +155,8 @@ class SignUp extends React.Component {
                     </form>
                 </div>
             </div>
-        )
-    };
+        );
+    }
 
 }
 export default SignUp

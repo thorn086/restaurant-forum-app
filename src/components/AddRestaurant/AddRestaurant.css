@@ -18,8 +18,8 @@
     margin:2rem 0;
 }
 .error_field{
-    background-color: rgb(53, 53, 53);
-    color: red;
+    background-color: rgb(1, 1, 245);
+    color:yellow;
     text-align: left;
     font-size: 12px;
     padding: 1rem;
@@ -47,11 +47,11 @@
 .resForm, #author{
     margin: 1rem;
 }
-#resName, #address, #phone, #state{
+#restaurant-name, #restaurant-address, #restaurant-phone, #restaurant-state{
     width: 15rem;
     height: 2rem;
 }
-#comments{
+#restaurant_comments{
     height: 6rem;
     width: 15rem;
     padding: 1rem;
@@ -64,11 +64,11 @@
         width: 80%;
         margin:auto;
     }
-    #resName, #address, #phone, #state{
+    #restaurant-name, #restaurant-address, #restaurant-phone, #restaurant-state{
         width: 20rem;
         height: 2rem;
     }
-    #comments{
+    #restaurant_comments{
         height: 6rem;
         width: 20rem;
         padding: 1rem;
@@ -80,11 +80,11 @@
         width: 75%;
         margin:auto;
     }
-    #resName, #address, #phone, #state{
+    #restaurant-name, #restaurant-address, #restaurant-phone, #restaurant-state{
         width: 20rem;
         height: 2rem;
     }
-    #comments{
+    #restaurant_comments{
         height: 6rem;
         width: 20rem;
         padding: 1rem;
@@ -104,24 +104,24 @@
         font-size: 16px;
         padding-left: 5rem;
     }
-    #resName, #address, #phone, #state{
+    #restaurant-name, #restaurant-address, #restaurant-phone, #restaurant-state{
         width: 23rem;
         height: 2rem;
     }
-     #phone{
+     #restaurant-phone{
         margin-left: 3rem;
     }
-    #resName{
+    #restaurant-name{
         margin-left: 3.3rem;
     }
-    #state{
+    #restaurant-state{
         margin-left: 3.5rem;
     }
 
-    #address{
+    #restaurant-address{
         margin-left: 2rem;
     }
-    #comments{
+    #restaurant_comments{
         height: 6rem;
         width: 23rem;
         padding: 1rem;

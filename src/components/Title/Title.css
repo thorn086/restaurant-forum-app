@@ -12,7 +12,7 @@
     position: absolute; 
     top: 50%;
     left:50%;
-    width: 90%;
+    width: 100%;
     padding: 1rem;
     transform: translate(-50%, -50%);
     text-align: center;
@@ -45,8 +45,13 @@ animation-duration: 3s;
 animation-timing-function: ease-out;
 animation-fill-mode: both;
 margin: 2rem 0;
+background-color: rgba(0, 0, 0, 0.776);
+border-radius: 1rem;
+padding: 5px;
 }
-
+.description_text{
+    margin: 8px;
+}
 .site-description{
     margin: 3rem 0;
     border: 2px solid black;
@@ -55,7 +60,6 @@ margin: 2rem 0;
     color: white;
     background-color: hsla(240, 50%, 52%, 0.85);
     text-shadow: -1px -1px black;
-    text-transform: uppercase;
     padding: .5rem;
     
 }
@@ -107,7 +111,8 @@ margin: 2rem 0;
     
     .site-description{
         font-size: 18px;
-        
+        width: 70%;
+        margin: 4rem auto;
         
         
     }
@@ -138,7 +143,8 @@ margin: 2rem 0;
     }
     .site-description{
         font-size: 20px;
-        
+        width: 60%;
+        margin: 4rem auto;
         
         
     }

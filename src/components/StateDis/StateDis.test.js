@@ -1,15 +1,14 @@
 import React from 'react';
-import Title from './Title';
+import StateDis from './StateDis';
 import { shallow, configure } from 'enzyme';
 import Adapter from 'enzyme-adapter-react-16';
 
 configure({ adapter: new Adapter() });
 
-describe('Title', () => {
-    const title = shallow(<Title />);
+describe('StateDis', () => {
+    const stateDis = shallow(<StateDis/>);
   
     it('renders properly', () => {
-        expect(title).toMatchSnapshot();
+        expect(stateDis).toMatchSnapshot();
     });
-
 });

@@ -32,6 +32,11 @@ margin: 1rem;
   width: 15rem;
   height: 2rem;
 }
+@media (width: 375px){
+  .back-btn{
+    margin-left: 4.7rem;
+  }
+}
 
 @media (min-width: 420px){
   .login-info-loc{

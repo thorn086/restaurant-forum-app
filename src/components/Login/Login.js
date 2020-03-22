@@ -1,14 +1,14 @@
-import React from 'react'
-import './Login.css'
-import restForumContext from '../../context'
-import NavBar from '../../components/NavBar/NavBar'
-import TokenService from '../../services/token-services'
-import ApiAuthService from '../../services/api-auth-service'
+import React from 'react';
+import './Login.css';
+import restForumContext from '../../context';
+import NavBar from '../../components/NavBar/NavBar';
+import TokenService from '../../services/token-services';
+import ApiAuthService from '../../services/api-auth-service';
 class Login extends React.Component {
   static defaultProps = {
     location: {},
     history: {
-      push: () => { },
+      push: () => {}
     }
   }
   state = {error: null }
@@ -21,10 +21,10 @@ class Login extends React.Component {
     this.context.userInfo({ email, userId })
 
   };
-
+  //checks user has authorization to enter site
   handleSubmitWithAuth = e => {
     e.preventDefault()
-    this.setState({ error: null })
+    this.setState({ error: null });
     const { email, password } = e.target
     ApiAuthService.postLogin({
       user_email: email.value,
@@ -38,9 +38,11 @@ class Login extends React.Component {
         password.value = ''
       })
       .catch(res => {
-        this.setState({ error: res.error })
+        this.setState({ error: res.error });
       })
   };
+
+  //validates information is correct and displays to DOM
   handleInccorectLogin() {
     if (this.state.error === null) {
       return (

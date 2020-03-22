@@ -6,7 +6,7 @@ import './StateDis.css'
 class StateDis extends React.Component {
     static contextType = RestForumContext
     render() {
-        const { states } = this.context
+        const { states } = this.context;
         return (
             <div>
                 <div className='state_list'>
@@ -15,9 +15,9 @@ class StateDis extends React.Component {
                             <li key={newState.id} className='state-items'>
                                 <NavLink className='state-list-link'
                                     to={`/states/${newState.id}`}>
-                                    <h3 className='state-name'>
+                                    <h2 className='state-name'>
                                         {newState.name}
-                                    </h3>
+                                    </h2>
                                 </NavLink>
                             </li>
                         )}

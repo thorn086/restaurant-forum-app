@@ -1,15 +1,14 @@
 import React from 'react';
-import Title from './Title';
+import Login from './Login';
 import { shallow, configure } from 'enzyme';
 import Adapter from 'enzyme-adapter-react-16';
 
 configure({ adapter: new Adapter() });
 
-describe('Title', () => {
-    const title = shallow(<Title />);
+describe('Login', () => {
+    const login = shallow(<Login/>);
   
     it('renders properly', () => {
-        expect(title).toMatchSnapshot();
+        expect(login).toMatchSnapshot();
     });
-
 });

@@ -1,26 +1,26 @@
 import React from 'react';
-import RestForumContext from './context'
-import { Switch, Route, withRouter } from 'react-router-dom'
-import Home from './pages/Home/home'
-import State from './pages/State/State'
-import City from './pages/City/City_page'
-import config from './config'
-import Restpage from './pages/Rest-Page/Rest-page'
-import EditRestaurant from './components/updateRestInfo/updateRestInfo'
-import './App.css'
-import Info from './pages/Info/Info'
-import SignUp from './pages/SignUp/SignUp'
-import Login from './components/Login/Login'
+import RestForumContext from './context';
+import { Switch, Route, withRouter } from 'react-router-dom';
+import Home from './pages/Home/home';
+import State from './pages/State/State';
+import City from './pages/City/City_page';
+import config from './config';
+import Restpage from './pages/Rest-Page/Rest-page';
+import EditRestaurant from './components/updateRestInfo/updateRestInfo';
+import './App.css';
+import Info from './pages/Info/Info';
+import SignUp from './pages/SignUp/SignUp';
+import Login from './components/Login/Login';
 class App extends React.Component {
   constructor(props) {
-    super(props)
+    super(props);
     this.state = {
       states: [],
       cities: [],
       restaurants: [],
       user: {},
       error: null
-    }
+    };
   }
 
 
@@ -33,15 +33,15 @@ class App extends React.Component {
     })
       .then(stateResult => {
         if (!stateResult.ok)
-          throw new Error(stateResult.statusText)
+          throw new Error(stateResult.statusText);
 
-        return stateResult.json()
+        return stateResult.json();
       })
 
       .then(state => this.setState({ states: state }))
       .catch(error => {
-        console.log(error)
-      })
+        console.log(error);
+      });
 
   }
 
@@ -71,6 +71,7 @@ class App extends React.Component {
       cities: cities
     })
   }
+  
   addStates = states => {
     this.setState({
       states: states
@@ -112,7 +113,7 @@ class App extends React.Component {
       addStates: this.addStates,
       error: this.state.error,
       addRestaurant: this.handleAddRestaurants
-    }
+    };
 
     return (
 

@@ -1,7 +1,7 @@
 export default function validateSignUp(password){
-    const errors =[]
+    const errors =[];
     if(password.length <8 || password.length > 50){
-        errors.push('Password must be between 8 and 50 characters')
+        errors.push('Password must be between 8 and 50 characters');
     }
     if (password.search(/[a-z]/g) < 0) {
         errors.push("Your password must contain at least one LOWERCASE letter."); 

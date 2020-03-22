@@ -5,4 +5,4 @@ export default{
     API_KEY: process.env.REACT_APP_API_KEY,
     USER_INFO: process.env.USER_INFO,
     //API_ENDPOINT: 'https://evening-scrubland-37192.herokuapp.com/api'
-}
+};

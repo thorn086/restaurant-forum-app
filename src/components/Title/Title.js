@@ -1,7 +1,7 @@
-import React from 'react'
-import {NavLink} from 'react-router-dom'
-import './Title.css'
-import TokenService from '../../services/token-services'
+import React from 'react';
+import {NavLink} from 'react-router-dom';
+import './Title.css';
+import TokenService from '../../services/token-services';
 
 class Title extends React.Component {
     renderLogedOut(){
@@ -29,8 +29,8 @@ class Title extends React.Component {
                     ? this.renderLogin()
                     : this.renderLogedOut()}
                 <div className='site-description'>
-                    <p>Join the site that offers quick information about Restaurants. Here our users will provide you with information about restaurants in cities they have been. 
-                         If you're new to the site create an account or take a look inside by clicking on the LOGIN button above and use our test user.</p>
+                    <p className='description_text'>Join the site that offers quick information about Restaurants. Here our users will provide you with information about restaurants in cities they have been.</p> 
+                    <p className='description_text'>If you're new to the site create an account or take a look inside by clicking on the LOGIN button above and use our test user.</p>
                 </div>
             </div>
         )

@@ -1,15 +1,14 @@
 import React from 'react';
-import Title from './Title';
+import AddRestaurant from './AddRestaurant';
 import { shallow, configure } from 'enzyme';
 import Adapter from 'enzyme-adapter-react-16';
 
 configure({ adapter: new Adapter() });
 
-describe('Title', () => {
-    const title = shallow(<Title />);
+describe('AddRestaurant', () => {
+    const addRestaurant= shallow(<AddRestaurant/>);
   
     it('renders properly', () => {
-        expect(title).toMatchSnapshot();
+        expect(addRestaurant).toMatchSnapshot();
     });
-
 });

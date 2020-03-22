@@ -1,9 +1,9 @@
-import React from 'react'
-import { withRouter, NavLink } from 'react-router-dom'
-import RestForumContext from '../../context'
-import config from '../../config'
-import AddRestaurant from '../AddRestaurant/AddRestaurant'
-import './RestDis.css'
+import React from 'react';
+import { withRouter, NavLink } from 'react-router-dom';
+import RestForumContext from '../../context';
+import config from '../../config';
+import AddRestaurant from '../AddRestaurant/AddRestaurant';
+import './RestDis.css';
 
 class RestDis extends React.Component {
     static defaultProps = {
@@ -15,27 +15,27 @@ class RestDis extends React.Component {
     state={
         show:false
     }
-
+    //finds individual restaurants in city selected
     componentDidMount() {
-        const { id } = this.props.match.params
+        const { id } = this.props.match.params;
         fetch(`${config.API_ENDPOINT}/city/${id}`)
             .then(res => {
                 if (res.ok)
-                    return res.json()
-                throw new Error(res.statusText)
+                    return res.json();
+                throw new Error(res.statusText);
 
             })
             .then(restaurants => this.context.addRestaurants(restaurants))
             .catch(error => {
                 this.setState({
                     error: error.message
-                })
-            })
+                });
+            });
     }
     showRestaurantAdd(){
         this.setState({
             show:!this.state.show
-        })
+        });
     }
 
 
@@ -44,17 +44,17 @@ class RestDis extends React.Component {
         if(show === false){
             return (
                 'Add Restaurant'
-            )
+            );
         }else{
             return(
                 'Cancel'
-            )
+            );
         }
 
     }
 
     handleHasRestaurants(){
-        const {restaurants}  = this.context
+        const {restaurants}  = this.context;
         if(restaurants.length === 0){
             return(
                 <ul className='state-list-items'>
@@ -62,7 +62,7 @@ class RestDis extends React.Component {
                         There are No Restaurants in this City, You can Add One!
                      </li>
                 </ul>
-            )
+            );
         }
         return(
             <ul className='state-list-items'>
@@ -71,9 +71,9 @@ class RestDis extends React.Component {
                 <li key={i} className='state-items'>
                     <NavLink className='state-list-link'
                         to={`/restaurant/${newRest.id}`}>
-                        <h3 className='state-name'>
+                        <h2 className='state-name'>
                             {newRest.name}
-                        </h3>
+                        </h2>
                     </NavLink>
                 </li>
                 )}

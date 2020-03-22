@@ -21,8 +21,9 @@
     margin: 0;
 }
 #name{
-    width: 12rem;
+    width: 14rem;
     height: 1.5rem;
+    padding-left: 10px;
     margin-bottom: 2rem;
 }
 @media (min-width: 377px){

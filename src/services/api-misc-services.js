@@ -42,7 +42,7 @@ getRestaurantById(id){
      )
 },
 updateRestaurant(id, updatedRestaurant) {
-    return fetch(`${config.API_ENDPOINT}/editrestaurant/${id}`, {
+    return fetch(`${config.API_ENDPOINT}/restaurant/${id}`, {
       method: 'PATCH',
       headers: {
         'content-type': 'application/json',

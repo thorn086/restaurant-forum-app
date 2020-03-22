@@ -1,35 +1,36 @@
-import React from 'react'
-import { withRouter, NavLink } from 'react-router-dom'
-import RestForumContext from '../../context'
-import TokenService from '../../services/token-services'
-import { findRestaurant, findState } from '../../states-helpers'
-import NavBar from '../../components/NavBar/NavBar'
-import config from '../../config'
-import MiscApiServices from '../../services/api-misc-services'
-import './Info.css'
+import React from 'react';
+import { withRouter, NavLink } from 'react-router-dom';
+import RestForumContext from '../../context';
+import TokenService from '../../services/token-services';
+import { findRestaurant, findState } from '../../states-helpers';
+import NavBar from '../../components/NavBar/NavBar';
+import config from '../../config';
+import MiscApiServices from '../../services/api-misc-services';
+import './Info.css';
 
 class Info extends React.Component {
     static contextType = RestForumContext
-
+    // get all restaurants in the city of the state selected
     componentDidMount() {
         MiscApiServices.getAllStates()
             .then(states => {
-                this.context.addStates(states)
+                this.context.addStates(states);
             })
             .catch(error => {
-                console.log(error)
-            })
+                console.log(error);
+            });
         MiscApiServices.getAllRestaurants()
             .then(restaurants => {
-                this.context.addRestaurants(restaurants)
+                this.context.addRestaurants(restaurants);
             })
             .catch(error => {
-                console.log(error)
-            })
+                console.log(error);
+            });
     }
+    //delete handler
     handleDeleteRestaurant = event => {
         event.preventDefault()
-        const { id } = this.props.match.params
+        const { id } = this.props.match.params;
 
         fetch(`${config.API_ENDPOINT}/restaurant/${id}`, {
             method: 'DELETE',
@@ -43,25 +44,25 @@ class Info extends React.Component {
                     return result.json().then(event => Promise.reject(event))
             })
             .then(() => {
-                this.context.deletedRestaurant(id)
+                this.context.deletedRestaurant(id);
 
             })
             .catch(error => {
-                console.log({ error })
+                console.log({ error });
             })
     }
 
     render() {
-
-        const { id } = this.props.match.params
-        const { restaurants = [], states = [] } = this.context
+        //if statement to see if information loaded and that information is present
+        const { id } = this.props.match.params;
+        const { restaurants = [], states = [] } = this.context;
         const myRest = findRestaurant(restaurants, parseInt(id))
         if (restaurants.length === 0 || states.length === 0) {
             return (
                 <div>
                     <p>Loading</p>
                 </div>
-            )
+            );
         } else if (myRest === undefined) {
             return (
                 <div className='rest-info'>
@@ -80,7 +81,7 @@ class Info extends React.Component {
                         <NavLink to='/' className='home-btn'>Home</NavLink>
                     </div>
                 </div>
-            )
+            );
         } else {
             const { state_id } = myRest
             const [newState] = findState(states, state_id)
@@ -89,9 +90,9 @@ class Info extends React.Component {
                     <NavBar />
 
                     <div className='rest-info-main'>
-                        <h2 className='rest-info-title'>
+                        <h1 className='rest-info-title'>
                             {myRest.name}
-                        </h2>
+                        </h1>
                     </div>
                     <div className='rest-info-loc'>
                         <p className='info-label'>Address:</p>
@@ -114,7 +115,7 @@ class Info extends React.Component {
                     <button className='back-btn info' type='button' onClick={this.handleDeleteRestaurant}>Delete</button>
 
                 </div>
-            )
+            );
         }
     }
 }

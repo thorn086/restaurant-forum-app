@@ -1,12 +1,12 @@
-import React from 'react'
-import './NavBar.css'
-import { NavLink } from 'react-router-dom'
-import TokenService from '../../services/token-services'
+import React from 'react';
+import './NavBar.css';
+import { NavLink } from 'react-router-dom';
+import TokenService from '../../services/token-services';
 
 class NavBar extends React.Component {
     handleLogoutClick = () => {
         TokenService.clearAuthToken()
-        window.location.reload();
+        window.location.reload()
     }
 
     renderLogoutLink() {
@@ -55,8 +55,8 @@ class NavBar extends React.Component {
         return (
             <div className='navigation'>
                 <input type='checkbox' className='navigation__checkbox' id='navi-toggle' />
-                <label htmlFor='navi-toggle' className='navigation__button'>
-                    <span className='navigation__icon'></span>
+                <label htmlFor='navi-toggle' aria-label='Menu' className='navigation__button '>
+                   <span className=' hiddentext'>Menu</span><span  className='navigation__icon'></span>
                 </label>
                 <div className='navigation__backgroud'>&nbsp;</div>
 

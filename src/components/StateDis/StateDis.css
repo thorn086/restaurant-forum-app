@@ -15,7 +15,8 @@
 }
 .state-name{
     background-color: rgba(123, 2, 142, 0.9);
-    height: 3rem;
+    height: auto;
+    width: auto;
     padding: .8rem 0;
     border: 1px solid white;
     border-radius: 2rem;
@@ -30,6 +31,8 @@
     padding: 1rem 1rem 1.5rem 1rem;
     text-align: center;
     height: auto;
+    width: 300px;
+    margin: 1rem auto;
     letter-spacing: 2px;
 }
 .back-btn{

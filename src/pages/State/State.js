@@ -1,9 +1,9 @@
-import React from 'react'
-import NavBar from '../../components/NavBar/NavBar'
-import {withRouter} from 'react-router-dom'
-import RestForumContext from '../../context'
-import StateDis from '../../components/StateDis/StateDis'
-import './State.css'
+import React from 'react';
+import NavBar from '../../components/NavBar/NavBar';
+import {withRouter} from 'react-router-dom';
+import RestForumContext from '../../context';
+import StateDis from '../../components/StateDis/StateDis';
+import './State.css';
 class State extends React.Component{
     static defaultProps = {
         match: {
@@ -19,7 +19,7 @@ class State extends React.Component{
        
         return(
             <div className="state_page">
-                <h2 className="state_title">Restaurant Forum by State</h2>
+                <h1 className="state_title">Restaurant Forum by State</h1>
                 <NavBar />
                 <div className='state-nav'>
                     <StateDis />

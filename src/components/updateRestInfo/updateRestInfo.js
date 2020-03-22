@@ -1,10 +1,10 @@
-import React from 'react'
-import { withRouter } from 'react-router-dom'
-import TokenService from '../../services/token-services'
-import NavBar from '../NavBar/NavBar'
-import RestForumContext from '../../context'
-import MiscApiServices from '../../services/api-misc-services'
-import './updateRestInfo.css'
+import React from 'react';
+import { withRouter } from 'react-router-dom';
+import TokenService from '../../services/token-services';
+import NavBar from '../NavBar/NavBar';
+import RestForumContext from '../../context';
+import MiscApiServices from '../../services/api-misc-services';
+import './updateRestInfo.css';
 
 class EditRestaurant extends React.Component {
 
@@ -18,21 +18,21 @@ class EditRestaurant extends React.Component {
     updateRestaurant = (e) => {
         e.preventDefault()
         const userId = Number(TokenService.getUserId())
-        const id = this.props.match.params.id
-        const { phone_edit, address_edit, comments_edit, author = userId } = e.target
+        const id = this.props.match.params.id;
+        const { phone_edit, address_edit, comments_edit, author = userId } = e.target;
       
         let updatedRestaurant = {}
         if (phone_edit.value !== '' && phone_edit.value !== null) {
-            updatedRestaurant.phone = phone_edit.value
+            updatedRestaurant.phone = phone_edit.value;
         }
         if (address_edit.value !== '' && address_edit.value !== null) {
-            updatedRestaurant.address = address_edit.value
+            updatedRestaurant.address = address_edit.value;
         }
         if (comments_edit.value !== '' && comments_edit.value !== null) {
-            updatedRestaurant.comments = comments_edit.value
+            updatedRestaurant.comments = comments_edit.value;
         }
         if (author.value !== '' && author.value !== null) {
-            updatedRestaurant.author = author.value
+            updatedRestaurant.author = author.value;
         }
 
         updatedRestaurant.id = id
@@ -50,30 +50,30 @@ class EditRestaurant extends React.Component {
 
     }
     render() {
-        const { id } = this.props.match.params
+        const { id } = this.props.match.params;
 
-        const { restaurants } = this.context
+        const { restaurants } = this.context;
 
-        const [oldInfo] = restaurants.filter(restaurant => restaurant.id === parseInt(id))
+        const [oldInfo] = restaurants.filter(restaurant => restaurant.id === parseInt(id));
         return (
             <div className='rest-info-edit'>
                 <NavBar />
                 <div className='rest-info-main'>
-                    <h2 className='rest-info-title'>
+                    <h1 className='rest-info-title'>
                         Update Restaurant
-                            </h2>
+                            </h1>
                 </div>
                 <form className="restaurant-edit-form" onSubmit={(e) => this.updateRestaurant(e)}>
                     <div className='restaurant_field_edit'>
-                        <label htmlFor='restaurant_name' className='edit_label'>Restaurant Address</label>
+                        <label htmlFor='address_edit' className='edit_label'>Restaurant Address</label>
                         <input type='text' id='address_edit' name='restaurant-address' defaultValue={oldInfo.address}></input>
                     </div>
                     <div className='restaurant_field_edit'>
-                        <label htmlFor='restaurant_name' className='edit_label'>Restaurant Phone</label>
-                        <input type='tel' id='phone_edit' name='restaurant-phone' defaultValue={oldInfo.phone}></input>
+                        <label htmlFor='phone_edit' className='edit_label'>Restaurant Phone</label>
+                        <input type='tel' id='phone_edit' name='restaurant-phone' pattern="^(?:\(\d{3}\)|\d{3})[- ]?\d{3}[- ]?\d{4}$" x-autocompletetype="tel" defaultValue={oldInfo.phone}></input>
                     </div>
                     <div className='restaurant_field_edit comments'>
-                        <label htmlFor='restaurant_name' className='edit_label_comments'>Comments</label>
+                        <label htmlFor='comments_edit' className='edit_label_comments'>Comments</label>
                         <textarea id='comments_edit' name='restaurant-comments' defaultValue={oldInfo.comments}></textarea>
                     </div>
                     <div className='author'>

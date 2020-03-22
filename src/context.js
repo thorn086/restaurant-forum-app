@@ -1,4 +1,4 @@
-import React from 'react'
+import React from 'react';
 
 const RestForumContext = React.createContext({
     states:[],
@@ -14,6 +14,6 @@ const RestForumContext = React.createContext({
       addStates:()=>{} ,
       error:()=>{} ,
       addRestaurant:()=>{}
-})
+});
 
 export default RestForumContext

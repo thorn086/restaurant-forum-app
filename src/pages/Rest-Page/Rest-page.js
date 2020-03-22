@@ -1,8 +1,8 @@
-import React from 'react'
-import NavBar from '../../components/NavBar/NavBar'
-import {withRouter} from 'react-router-dom'
-import RestForumContext from '../../context'
-import RestDis from '../../components/RestDis/RestDis'
+import React from 'react';
+import NavBar from '../../components/NavBar/NavBar';
+import {withRouter} from 'react-router-dom';
+import RestForumContext from '../../context';
+import RestDis from '../../components/RestDis/RestDis';
 
 class Restpage extends React.Component{
     static defaultProps = {
@@ -19,7 +19,7 @@ class Restpage extends React.Component{
        
         return(
             <div className="state_page">
-                <h2 className="state_title">Choose your Restaurant</h2>
+                <h1 className="state_title">Choose your Restaurant</h1>
                 <NavBar />
                 <div className='rest-nav'>
                     <RestDis />

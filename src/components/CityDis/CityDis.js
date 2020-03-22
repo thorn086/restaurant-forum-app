@@ -1,10 +1,10 @@
-import React from 'react'
-import { withRouter, NavLink } from 'react-router-dom'
-import AddCity from '../../components/AddCity/AddCity'
-import restForumContext from '../../context'
-import config from '../../config'
-import TokenService from '../../services/token-services'
-import './CityDis.css'
+import React from 'react';
+import { withRouter, NavLink } from 'react-router-dom';
+import AddCity from '../../components/AddCity/AddCity';
+import restForumContext from '../../context';
+import config from '../../config';
+import TokenService from '../../services/token-services';
+import './CityDis.css';
 
 
 class CityDis extends React.Component {
@@ -16,8 +16,8 @@ class CityDis extends React.Component {
 
     handleDeleteCity=event=>{
         event.preventDefault()
-        const citySelected = event.target.value
-        
+        const citySelected = event.target.value;
+        //deletes selected city
         fetch(`${config.API_ENDPOINT}/states/${citySelected}`,{
             method:'DELETE',
             headers:{
@@ -30,11 +30,11 @@ class CityDis extends React.Component {
                 return result.json().then(event => Promise.reject(event))
         })
         .then(()=> {
-           this.context.deleteCity(citySelected)
+           this.context.deleteCity(citySelected);
             
         })
         .catch(error => {
-            console.log({ error })
+            console.log({ error });
         })
     }
 
@@ -62,9 +62,9 @@ class CityDis extends React.Component {
                         <li key={i} className='state-items'>
                             <NavLink className='state-list-link'
                                 to={`/city/${newCity.id}`}>
-                                <h3 className='state-name'>
+                                <h2 className='state-name'>
                                     {newCity.name}
-                                </h3>
+                                </h2>
                             </NavLink>
                             <p className='author_userId'> Added By User: {newCity.author}</p> 
                             <button value={newCity.id} className='delete-btn' type='button' onClick={this.handleDeleteCity}>Delete</button>
