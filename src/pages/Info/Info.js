@@ -45,7 +45,7 @@ class Info extends React.Component {
             })
             .then(() => {
                 this.context.deletedRestaurant(id);
-
+                alert(`You deleted the restaurant!`);
             })
             .catch(error => {
                 console.log({ error });
