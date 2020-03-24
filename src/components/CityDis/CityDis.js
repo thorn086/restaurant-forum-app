@@ -31,7 +31,7 @@ class CityDis extends React.Component {
         })
         .then(()=> {
            this.context.deleteCity(citySelected);
-           alert(`You deleted city ${citySelected.name}.`);
+           alert(`You deleted the City!);
             
         })
         .catch(error => {
