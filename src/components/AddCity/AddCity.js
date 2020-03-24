@@ -46,7 +46,7 @@ class AddCity extends React.Component {
                 this.context.addCity(city);
                 this.props.show();
                 this.props.history.push(`/states/${id}`);
-                
+                alert('Your city was added');
             })
             .catch(error => {
                 console.error({ error });

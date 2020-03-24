@@ -59,6 +59,7 @@ class AddRestaurant extends React.Component {
             .then(restaurant => {
                 this.context.addRestaurant(restaurant);
                 window.location.reload();
+                alert('Your restaurant was added');
             })
             .catch(error => {
                 console.error({ error });
