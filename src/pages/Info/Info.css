@@ -67,6 +67,9 @@ line-height: 2;
     .rest-info-main{
         margin: 2rem 6rem;
     }
+    .back-btn.info{
+        margin-left: 1.5rem;
+    }
 }
 @media (min-width: 1094px){
     .rest-info-title{
@@ -80,7 +83,7 @@ line-height: 2;
         margin: 2rem 2.4rem;
     } 
     .back-btn.info{
-        margin-left: 4.5rem;
+        margin-left: 1.5rem;
     }
 }
 @media (min-width: 1440px){
@@ -96,7 +99,7 @@ line-height: 2;
         font-size: 18px;
     } 
     .back-btn.info{
-        margin-left: 8rem;
+        margin-left: 1rem;
     }
 }
 @media (min-width: 2440px){
@@ -109,6 +112,6 @@ line-height: 2;
         font-size: 18px;
     } 
     .back-btn.info{
-        margin-left: 10rem;
+        margin-left: 3.5rem;
     }
 }

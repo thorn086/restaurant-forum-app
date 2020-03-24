@@ -113,7 +113,7 @@ class Info extends React.Component {
                         <button className=' back-btn info' tag='button' >Update</button>
                     </NavLink>
                     <button className='back-btn info' type='button' onClick={this.handleDeleteRestaurant}>Delete</button>
-                    <button className=' back-btn' tag='button' onClick={()=> this.props.history.goBack()}>Back</button>
+                    <button className=' back-btn info' tag='button' onClick={()=> this.props.history.goBack()}>Back</button>
 
 
                 </div>
